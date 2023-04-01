@@ -19,7 +19,7 @@ export default function AboutHeader({header}) {
       <div className="relative max-w-xl px-5 mx-auto lg:max-w-screen-xl lg:px-8 md:max-w-3xl sm:px-12">
         <div className="flex items-center justify-between w-full">
           <div className="max-w-xl">
-            <p className="text-xs tracking-widest text-red-300 uppercase">
+            <p className="text-xs tracking-widest text-red-600 uppercase">
               {header.subheader}
             </p>
             <h1 className="mt-3 text-3xl font-medium tracking-normal text-white sm:mt-4 sm:text-4xl md:tracking-tight lg:leading-tight lg:text-5xl">

@@ -11,6 +11,7 @@ import Topics from '../components/home/Topics'
 import BannerArticle from '../components/shared/BannerArticle'
 import TestimonialSlider from '../components/shared/TestimonialSlider'
 import JobSearchFilter from '../components/shared/JobSearchFilter'
+import Tabs from '../components/shared/Tabs';
 
 import Newsletter from '../components/shared/Newsletter'
 import { getArchivedPosts, getFeaturedPosts, getPopularPosts } from '../libs/getPosts'
@@ -46,6 +47,23 @@ export default function Home({
   newsletter
 }) {
 
+  const tabs = [
+    {
+      id: 1, 
+      label: 'Tab 1',
+      content: <p>Content for tab 1 goes here</p>,
+    },
+    {
+      id: 2,
+      label: 'Tab 2',
+      content: <p>Content for tab 2 goes here</p>,
+    },
+    {
+      id: 3,
+      label: 'Tab 3',
+      content: <p>Content for tab 3 goes here</p>,
+    },
+  ];
 
   return (
     <Layout>
@@ -90,8 +108,9 @@ export default function Home({
 
       
       <Newsletter newsletter={newsletter} />
-      {/* <TestimonialSlider testimonials={testimonials} />
-      <JobSearchFilter jobs={jobs} /> */}
+     <TestimonialSlider testimonials={testimonials} />
+     <Tabs tabs={tabs} />
+     {/*  {/*s   <JobSearchFilter jobs={jobs} /> */}
     </Layout>
   )
 }

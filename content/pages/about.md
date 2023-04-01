@@ -1,8 +1,9 @@
 ---
 title: "About"
 description: "This is a mock description for about page"
+schmlort: 'big spermy cock'
 header:
-  heading:  "We illuminating today's stories on culture, tech, business, and science through great journalism and a thirst for notoriety."
+  heading:  "We illuminate today's stories on tech, culture, business, and science through great journalism and a thirst for notoriety."
   subheader: "About Busy Little Pixels | Blog"
   image: "/images/about/about-header.jpeg"
 partner_section:
