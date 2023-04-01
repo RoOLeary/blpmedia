@@ -25,7 +25,7 @@ const options = {
           return session;
         },
         async redirect({ url, baseUrl }) {
-            const redirUrl = 'https://blpmedia.vercel.app/account'
+            const redirUrl = 'https://blpmedia.vercel.app'
             return redirUrl;
         }
     },

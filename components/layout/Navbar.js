@@ -106,7 +106,7 @@ export default function Navbar() {
                       height={36}
                       layout="fixed"
                       className="rounded-full w-9 h-9"
-                    /> <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
+                    /> <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
               </div>
 
               {/* Hamburger menu button */}
