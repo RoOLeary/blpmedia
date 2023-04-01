@@ -98,6 +98,7 @@ export default function Navbar() {
               </div>
 
               {/* Search */}
+              <div className="flex">
               <div className="relative rounded-3xl">
               {session ? <div className='flex gap-4'><Image 
                       src={session.user.image} 
@@ -118,7 +119,7 @@ export default function Navbar() {
                   <span className="absolute left-0 block w-full h-0.5 transition duration-300 ease-in-out transform rotate-0 bg-gray-600 rounded-full opacity-100 top-3 group-hover:bg-gray-900" />
                 </span>
               </Disclosure.Button>
-      
+              </div>
             </div>
             
           </nav>

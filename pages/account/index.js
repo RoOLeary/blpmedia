@@ -10,10 +10,10 @@ export default function Account() {
 
   if (session) {
     return (
-      <>
+    <Layout metaTitle="Protected Page">
         <h1>Protected Page</h1>
         <p>You can view this page because you are signed in.</p>
-      </>
+      </Layout>
     )
   }
   return (
