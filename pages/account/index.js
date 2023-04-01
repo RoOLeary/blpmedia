@@ -1,21 +1,28 @@
-import Link from 'next/link'
 import Layout from '../../components/layout/Layout'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn } from "next-auth/react"
 import { ArrowSmRightIcon } from '@heroicons/react/solid'
 
 export default function Account() {
   const { session, loading } = useSession()
 
+  console.log(session);
+
   if (typeof window !== "undefined" && loading) return null
 
   if (session) {
+    console.log('sesh');
     return (
     <Layout metaTitle="Protected Page">
-        <h1>Protected Page</h1>
-        <p>You can view this page because you are signed in.</p>
-      </Layout>
+        <section className="bg-gray-50">
+            <div className="flex flex-col p-20 w-full">
+            
+                <h1 className="text-5xl font-extrabold">Protected Page</h1>
+                <p>You can view this page because you are signed in.</p>
+            </div>
+        </section>
+    </Layout>
     )
-  }
+  } else 
   return (
     <Layout metaTitle="ACCESS DENIED">
     <section className="bg-gray-50">
@@ -31,17 +38,17 @@ export default function Account() {
               </p>
             </div>
             <div className="inline-block">
-              <Link href="/">
+              
                 <a onClick={() => signIn()} className="flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-600 group">
                     Login
                   <ArrowSmRightIcon className="w-5 h-5 ml-2 transition duration-300 ease-in-out group-hover:text-red-700 group-hover:translate-x-1.5" />
                 </a>
-              </Link>
+              
             </div>
           </div>
         </div>
       </div>
     </section>
-  </Layout>
+    </Layout>
     )
 }
