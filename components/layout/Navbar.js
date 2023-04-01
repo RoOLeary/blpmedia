@@ -21,7 +21,7 @@ export default function Navbar() {
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
       {({ open }) => (
         <>
-          <nav className="flex items-center h-20 px-8 mx-auto max-w-full sm:px-6">
+          <nav className="flex items-center h-20 px-8 mx-auto max-w-7xl sm:px-6">
             
             {/* Main navbar for large screens */}
             <div className="flex items-center justify-between w-full">
