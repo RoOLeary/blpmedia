@@ -99,7 +99,14 @@ export default function Navbar() {
 
               {/* Search */}
               <div className="relative rounded-3xl">
-              {session ? <p>Hi {session.user.name} <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400" onClick={() => signOut()}>Log out</button></p> :  <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400"onClick={() => signIn()}>Log in/Sign Up</button> }
+              {session ? <div className='flex gap-4'><Image 
+                      src={session.user.image} 
+                      alt={session.user.name}
+                      width={36}
+                      height={36}
+                      layout="fixed"
+                      className="rounded-full w-9 h-9"
+                    /> <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
               </div>
 
               {/* Hamburger menu button */}
