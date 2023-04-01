@@ -1,54 +1,78 @@
+import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
-import { useSession, signIn } from "next-auth/react"
-import { ArrowSmRightIcon } from '@heroicons/react/solid'
+import { useSession, getSession } from "next-auth/react";
+
+
 
 export default function Account() {
-  const { session, loading } = useSession()
+    const { data: session, status } = useSession()
 
-  console.log(session);
+    const opts = {
+        height: "560",
+        width: "100%",
+        playerVars: {
+          autoplay: 1,
+        },
+    };
 
-  if (typeof window !== "undefined" && loading) return null
+    const _onReady = (event) => {
+        // event.target.pauseVideo();
+    }
 
-  if (session) {
-    console.log('sesh');
+    const HeroText = {
+        headline: 'Members',
+    }
+
+    // if (status === "loading") {
+    //     return <p>Loading...</p>
+    // }
+
+    // if (status === "unauthenticated") {
+    //     return <h1>Access Denied</h1>
+    // }
+
+    if (!session) {
+        return (
+            <Layout metaTitle="ACCESS DENIED">
+            <section className="bg-gray-50">
+              <div className="max-w-2xl min-h-screen px-4 py-12 mx-auto sm:px-6 lg:px-12 lg:max-w-screen-2xl lg:flex lg:items-center sm:pt-16 xl:py-20 ">
+                
+                {/* Page not found */}
+                <div className="flex flex-col justify-center lg:w-1/2 xl:w-2/5">
+                  <div className="max-w-md">
+                    <h2 className="mt-3 text-4xl font-medium tracking-normal text-red-800 uppercase md:tracking-tight lg:leading-tight md:text-5xl">Access Denied</h2>
+                    <div>
+                      <p className="mt-4 text-base leading-loose text-gray-600">
+                        To view this page, you must be logged in. 
+                      </p>
+                    </div>
+                    <div className="inline-block">
+                      
+                        <a onClick={() => signIn()} className="flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-600 group">
+                            Login
+                        </a>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            </Layout>
+        )
+    }
+
     return (
-    <Layout metaTitle="Protected Page">
-        <section className="bg-gray-50">
-            <div className="flex flex-col p-20 w-full">
-            
-                <h1 className="text-5xl font-extrabold">Protected Page</h1>
-                <p>You can view this page because you are signed in.</p>
-            </div>
-        </section>
-    </Layout>
-    )
-  } else 
-  return (
-    <Layout metaTitle="ACCESS DENIED">
-    <section className="bg-gray-50">
-      <div className="max-w-2xl min-h-screen px-4 py-12 mx-auto sm:px-6 lg:px-12 lg:max-w-screen-2xl lg:flex lg:items-center sm:pt-16 xl:py-20 ">
-        
-        {/* Page not found */}
-        <div className="flex flex-col justify-center lg:w-1/2 xl:w-2/5">
-          <div className="max-w-md">
-            <h2 className="mt-3 text-4xl font-medium tracking-normal text-red-800 uppercase md:tracking-tight lg:leading-tight md:text-5xl">Access Denied</h2>
-            <div>
-              <p className="mt-4 text-base leading-loose text-gray-600">
-                To view this page, you must be logged in. 
-              </p>
-            </div>
-            <div className="inline-block">
-              
-                <a onClick={() => signIn()} className="flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-600 group">
-                    Login
-                  <ArrowSmRightIcon className="w-5 h-5 ml-2 transition duration-300 ease-in-out group-hover:text-red-700 group-hover:translate-x-1.5" />
-                </a>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    </Layout>
-    )
+        <Layout metaTitle="Your Acccount">
+            <section className="bg-gray-50">
+              <div className="max-w-2xl min-h-screen px-8 py-12 mx-auto sm:px-6 lg:px-12 lg:max-w-screen-2xl lg:flex flex-col sm:pt-16 xl:py-20 ">
+                    <h1 className="text-5xl font-extrabold">Protected Page</h1>
+                    <p>Hi {session.user.name}, how are you today?</p>
+                </div>
+            </section>
+           
+        </Layout>
+  )
 }
+
+
+
