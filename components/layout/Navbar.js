@@ -7,12 +7,17 @@ import { Fragment } from 'react'
 import { Disclosure, Menu } from '@headlessui/react'
 import { ChevronDownIcon, SearchIcon } from '@heroicons/react/solid'
 
+import { useSession, signIn, signOut } from "next-auth/react"
+
 
 
 // If loading a variable font, you don't need t
 
 export default function Navbar() {
   const router = useRouter();
+  const { data: session } = useSession()
+
+  console.log(session);
 
   return (
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
@@ -93,19 +98,8 @@ export default function Navbar() {
               </div>
 
               {/* Search */}
-              <div className="relative w-full h-10 ml-6 max-w-xxs rounded-3xl">
-                <form className="transition duration-300 ease-in-out rounded-3xl group">
-                  <div className="absolute inset-y-0 flex items-center left-3">
-                    <SearchIcon className="w-5 h-5 text-gray-400" />
-                  </div>
-                  <input 
-                    type="email" 
-                    className="w-full h-10 px-10 py-3 text-sm leading-5 text-gray-800 transition duration-300 ease-in-out bg-white border border-gray-200 hover:bg-gray-50 rounded-3xl focus:outline-none focus:ring-2 focus:ring-red-100 focus:bg-gray-50" 
-                    required 
-                    placeholder="Search..."  
-                    autoComplete="email" 
-                  />
-                </form>
+              <div className="relative rounded-3xl">
+              {session ? <p>Hi {session.user.name} <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400" onClick={() => signOut()}>Log out</button></p> :  <button className="bg-red-600 text-white rounded-sm px-4 hover:bg-red-400"onClick={() => signIn()}>Log in/Sign Up</button> }
               </div>
 
               {/* Hamburger menu button */}

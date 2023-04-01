@@ -1,10 +1,12 @@
 import '../styles/globals.css'
+import { SessionProvider } from "next-auth/react"
 
-
-function BLPMedia({ Component, pageProps }) {
+export default function BLPMedia({
+  Component, pageProps: { session, ...pageProps }
+}) {
   return (
-    <Component {...pageProps} />
+    <SessionProvider session={session}>
+      <Component {...pageProps}/>
+    </SessionProvider>
   )
 }
-
-export default BLPMedia
