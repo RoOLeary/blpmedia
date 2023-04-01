@@ -39,3 +39,51 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+body {
+  --white: #fafafa;
+  --sky: #00ccff;
+  --red: #fe0222;
+  --slate: #C0C2C9;
+  --background: var(--blue);
+  --accent: var(--white);
+}
+
+
+#progress {
+  position: fixed; 
+  top: 0;
+  right: 0;
+  transform: rotate(-90deg);
+}
+
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 10%;
+  fill: transparent;
+}
+
+.bg {
+  stroke: var(--slate);
+  opacity: 0.3;
+}
+
+#progress .indicator {
+  stroke: var(--red);
+}
+
+#prog_id{
+  @apply invisible md:visible; 
+  position: fixed;
+  width: 50px;
+  right: 2em;
+  z-index: 10;
+  height: 50px;
+  padding: 1em;
+}
+.unscrolled{
+  @apply opacity-0 
+}
+.scrolled{
+  @apply opacity-100 transition-all duration-500 ease-in-out
+}
