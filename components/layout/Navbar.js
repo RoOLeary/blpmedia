@@ -21,7 +21,7 @@ export default function Navbar() {
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
       {({ open }) => (
         <>
-          <nav className="flex items-center h-20 px-8 mx-auto max-w-7xl sm:px-6">
+          <nav className="flex items-center h-20 px-4 mx-auto max-w-7xl md:px-6">
             
             {/* Main navbar for large screens */}
             <div className="flex items-center justify-between w-full">
@@ -107,7 +107,9 @@ export default function Navbar() {
                       height={36}
                       layout="fixed"
                       className="rounded-full w-9 h-9 hover:opacity-50 hover:border-red-500"
-                    /> </a><button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
+                    /> 
+                  </a>
+                <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
               </div>
 
               {/* Hamburger menu button */}
