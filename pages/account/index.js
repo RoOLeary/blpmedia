@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
-import { useSession, getSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 
 
 
 export default function Account() {
-    const { data: session, status } = useSession()
+    const { data: session, status, loading } = useSession()
+
+    console.log(loading);
 
     const opts = {
         height: "560",
@@ -17,10 +19,6 @@ export default function Account() {
 
     const _onReady = (event) => {
         // event.target.pauseVideo();
-    }
-
-    const HeroText = {
-        headline: 'Members',
     }
 
     // if (status === "loading") {
@@ -35,7 +33,7 @@ export default function Account() {
         return (
             <Layout metaTitle="ACCESS DENIED">
             <section className="bg-gray-50">
-              <div className="max-w-2xl min-h-screen px-4 py-12 mx-auto sm:px-6 lg:px-12 lg:max-w-screen-2xl lg:flex lg:items-center sm:pt-16 xl:py-20 ">
+              <div className="max-w-7xl min-h-screen px-8 py-12 mx-auto sm:px-6 lg:px-12flex flex-col sm:pt-16">
                 
                 {/* Page not found */}
                 <div className="flex flex-col justify-center lg:w-1/2 xl:w-2/5">
@@ -47,11 +45,9 @@ export default function Account() {
                       </p>
                     </div>
                     <div className="inline-block">
-                      
-                        <a onClick={() => signIn()} className="flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-600 group">
+                        <a onClick={() => signIn()} className="bg-gray-200 rounded-sm flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-gray-50 group px-4 py-2 hover:bg-red-600">
                             Login
                         </a>
-                      
                     </div>
                   </div>
                 </div>
@@ -64,7 +60,7 @@ export default function Account() {
     return (
         <Layout metaTitle="Your Acccount">
             <section className="bg-gray-50">
-              <div className="max-w-2xl min-h-screen px-8 py-12 mx-auto sm:px-6 lg:px-12 lg:max-w-screen-2xl lg:flex flex-col sm:pt-16 xl:py-20 ">
+              <div className="max-w-7xl min-h-screen px-8 py-12 mx-auto sm:px-6 lg:px-12flex flex-col sm:pt-16">
                     <h1 className="text-5xl font-extrabold">Protected Page</h1>
                     <p>Hi {session.user.name}, how are you today?</p>
                 </div>

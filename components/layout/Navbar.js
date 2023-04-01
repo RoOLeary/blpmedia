@@ -17,8 +17,6 @@ export default function Navbar() {
   const router = useRouter();
   const { data: session } = useSession()
 
-  console.log(session);
-
   return (
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
       {({ open }) => (
