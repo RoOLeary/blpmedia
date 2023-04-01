@@ -60,8 +60,8 @@ export default function Account() {
     return (
         <Layout metaTitle="Your Acccount">
             <section className="bg-gray-50">
-              <div className="max-w-7xl min-h-screen px-8 py-12 mx-auto sm:px-6 lg:px-12flex flex-col sm:pt-16">
-                    <h1 className="text-5xl font-extrabold">Protected Page</h1>
+              <div className="max-w-7xl min-h-screen px-12 py-12 mx-auto sm:px-6 lg:px-12 flex flex-col sm:pt-16">
+                    <h2 className="mt-3 text-4xl font-medium tracking-normal text-red-800 uppercase md:tracking-tight lg:leading-tight md:text-5xl">Account Dashboard</h2>
                     <p>Hi {session.user.name}, how are you today?</p>
                 </div>
             </section>

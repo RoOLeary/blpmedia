@@ -21,7 +21,7 @@ export default function Navbar() {
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
       {({ open }) => (
         <>
-          <nav className="flex items-center h-20 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <nav className="flex items-center h-20 px-8 mx-auto max-w-full sm:px-6">
             
             {/* Main navbar for large screens */}
             <div className="flex items-center justify-between w-full">
@@ -98,14 +98,16 @@ export default function Navbar() {
               {/* Search */}
               <div className="flex">
               <div className="relative rounded-3xl">
-              {session ? <div className='flex gap-4'><Image 
+              {session ? <div className='flex gap-4'>
+                      <a href={`/account`}>
+                      <Image 
                       src={session.user.image} 
                       alt={session.user.name}
                       width={36}
                       height={36}
                       layout="fixed"
-                      className="rounded-full w-9 h-9"
-                    /> <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
+                      className="rounded-full w-9 h-9 hover:opacity-50 hover:border-red-500"
+                    /> </a><button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
               </div>
 
               {/* Hamburger menu button */}
