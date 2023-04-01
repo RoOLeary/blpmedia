@@ -33,7 +33,7 @@ export default function Account() {
         return (
             <Layout metaTitle="ACCESS DENIED">
             <section className="bg-gray-50">
-              <div className="max-w-7xl min-h-screen px-12 py-12 mx-auto sm:px-6 flex flex-col sm:pt-16">
+              <div className="max-w-7xl min-h-screen px-6 md:px-12 py-12 mx-auto flex flex-col sm:pt-16">
                 
                 {/* Page not found */}
                 <div className="flex flex-col justify-center lg:w-1/2 xl:w-2/5">
