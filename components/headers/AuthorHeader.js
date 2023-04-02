@@ -3,7 +3,7 @@ import { getSocialIconComponent } from '../../utils/getSocialIconComponent'
 
 export default function AuthorHeader({author}) {
   return (
-    <section className="py-12 sm:py-16 bg-gray-50 md:py-20 lg:py-24">
+    <section className="py-8 bg-gray-100">
       <div className="max-w-xl px-6 mx-auto lg:max-w-screen-xl sm:px-12 md:max-w-3xl lg:px-8">
         
         {/* Container */}

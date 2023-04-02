@@ -3,7 +3,7 @@ title: "Biden to Make Lithium Batteries a National Security Priority"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-08.jpeg"
 date: "2023-04-04T16:56:47+06:00"
-author: "Nikki Sixx"
+author: "Jack Dunn"
 time_to_read_in_minutes: 9
 views: 1150
 category: "Science"

@@ -4,7 +4,7 @@ import { getSocialIconComponent } from '../../utils/getSocialIconComponent'
 
 export default function Team({teamSection, authors}) {
 
-  const filteredAuthors = authors.filter(author => author.frontmatter.name !== 'Nikki Sixx');
+  const filteredAuthors = authors.filter(author => author.frontmatter.name !== 'Jack Dunn');
 
 
   return (

@@ -3,7 +3,7 @@ title: "Elon Musk Acquiring Twitter is a Big Win for Free Speech"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-58.jpeg"
 date: "2023-04-01T16:56:47+06:00"
-author: "John 5"
+author: "Jack Dunn"
 time_to_read_in_minutes: 8
 views: 2290
 category: "Startup"

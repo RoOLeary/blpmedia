@@ -3,7 +3,7 @@ title: "A New Test to Check if You're Driving while Baked"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/featured-05.jpeg"
 date: "2023-04-13T16:56:47+06:00"
-author: "Nikki Sixx"
+author: "Jack Dunn"
 time_to_read_in_minutes: 9
 views: 5237
 category: "Culture"

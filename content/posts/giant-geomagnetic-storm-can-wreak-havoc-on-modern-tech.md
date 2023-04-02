@@ -3,7 +3,7 @@ title: "Giant Geomagnetic Storm Can Wreak Havoc on Modern Tech"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-14.jpeg"
 date: "2023-03-21T16:56:47+06:00"
-author: "John 5"
+author: "Jack Dunn"
 time_to_read_in_minutes: 11
 views: 3878
 category: "Science"

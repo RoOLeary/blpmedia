@@ -3,7 +3,7 @@ title: "Developing a Growth Startegy"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-06.jpeg"
 date: "2023-04-16T16:56:47+06:00"
-author: "Nikki Sixx"
+author: "Jack Dunn"
 time_to_read_in_minutes: 12
 views: 4025
 category: "Startups"
