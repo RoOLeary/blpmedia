@@ -46,7 +46,8 @@ const PostPage = ({
   frontmatter: post,
   authors,
   nextArticle,
-  newsletter
+  newsletter,
+  article
 }) => {
 
   const articleRef = useRef();
@@ -67,7 +68,7 @@ const PostPage = ({
   const complete = position === 0;
   const notMoved = position === 1;
 
-  console.log(complete);
+  // console.log(complete, scrollValue)
 
   return (
     <Layout 
@@ -75,7 +76,7 @@ const PostPage = ({
       metaDescription={post.description} 
       ogImage={post.image}
     >
-      <div id="prog_id" className={(scrollValue < 0.05)  ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
+      <div id="prog_id" className={(scrollValue < 0.05) || (scrollValue >= 1.1) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
           <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
             <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} />
@@ -112,6 +113,12 @@ export async function getStaticProps({ params: { slug } }) {
     'utf8'
   )
 
+  // let remoteSlug = 'can-you-hack-productivity-with-pills';
+  // let url = `https://craft-ezhk.frb.io/api/articles/${remoteSlug}.json`;
+  // const res = await fetch(url)
+  // const article = await res.json()
+  
+
   const { data: frontmatter, content } = matter(fileContents)
   const nextArticle = getNextArticle({frontmatter, slug})
   
@@ -123,6 +130,7 @@ export async function getStaticProps({ params: { slug } }) {
       authors: getAuthors(),
       nextArticle,
       newsletter: getContentPage('content/shared/newsletter.md')
+      // article: article
     },
   }
 }
