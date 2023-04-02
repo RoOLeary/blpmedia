@@ -3,7 +3,7 @@ title: "CMS Development with Next.js and Craft CMS"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-41.jpeg"
 date: "2023-05-01T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 12
 views: 2620
 category: "Technology"

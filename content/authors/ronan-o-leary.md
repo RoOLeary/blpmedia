@@ -1,5 +1,5 @@
 ---
-name: "Danger Ro"
+name: "Ronan O Leary"
 image: "https://placedog.net/96/96"
 role: "CTO and word-talker"
 social_links:

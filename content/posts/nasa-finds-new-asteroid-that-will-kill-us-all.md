@@ -3,7 +3,7 @@ title: "NASA Finds New Asteroid That Will Kill Us All in Five Years"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-57.jpeg"
 date: "2023-03-20T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 12
 views: 3438
 category: "Science"

@@ -3,7 +3,7 @@ title: "The Deadly Cyclone That Brought The United States and Russia to the Brin
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-53.jpeg"
 date: "2023-04-02T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 15
 views: 4856
 category: "Culture"

@@ -49,7 +49,7 @@ export default {
   "metaData": {
     "title" : "BLP Media | NextJS /Craft Media Template",
     "description" : "BLP Media - a modern, stylish magazine, or news site.",
-    "author" : "Ro O'Leary",
+    "author" : "Ronan O Leary",
     "keyword" : "magazine, react, nextjs, tech blog",
     "ogImage" : "/images/ogimage.jpg"
   },
@@ -134,7 +134,7 @@ title: "15 Ways to Grow Your Startup"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-02.jpeg"
 date: "2023-04-05T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 12
 views: 6807
 category: "Startup"

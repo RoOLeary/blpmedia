@@ -3,7 +3,7 @@ title: "Life After the Pandemic"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-20.jpeg"
 date: "2023-02-23T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 12
 views: 7685
 category: "Science"

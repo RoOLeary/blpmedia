@@ -3,7 +3,7 @@ title: "Netflix Stock Plummets $52 Billion After Huge Subscriber Loss"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-32.jpeg"
 date: "2023-04-21T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 12
 views: 4804
 category: "Entertainment"

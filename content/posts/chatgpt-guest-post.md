@@ -3,7 +3,7 @@ title: "Chat GPT Inspiration"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-08.jpeg"
 date: "2023-04-24T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 9
 views: 1150
 category: "Technology"

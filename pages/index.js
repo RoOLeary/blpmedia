@@ -108,9 +108,8 @@ export default function Home({
 
       
       <Newsletter newsletter={newsletter} />
-     <TestimonialSlider testimonials={testimonials} />
-     <Tabs tabs={tabs} />
-     {/*  {/*s   <JobSearchFilter jobs={jobs} /> */}
+     {/* <TestimonialSlider testimonials={testimonials} />
+     <Tabs tabs={tabs} /> */}
     </Layout>
   )
 }

@@ -3,7 +3,7 @@ title: "New Life That Lives Off Elecricity"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-16.jpeg"
 date: "2021-02-20T16:56:47+06:00"
-author: "Danger Ro"
+author: "Ronan O Leary"
 time_to_read_in_minutes: 16
 views: 9609
 category: "Science"
