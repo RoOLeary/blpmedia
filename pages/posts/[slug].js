@@ -9,9 +9,6 @@ import Post from '../../components/posts/Post'
 import NextArticle from '../../components/posts/NextArticle'
 import Newsletter from '../../components/shared/Newsletter'
 import { getContentPage } from '../../libs/getContentPage'
-// import { useScroll } from 'framer-motion';
-import useScrollPosition from '../../hooks/useScrollPosition'
-
 
 const PostPage = ({
   slug,
@@ -22,23 +19,22 @@ const PostPage = ({
   newsletter
 }) => {
 
-  const postref = useRef(null);
-  const [scrolled, setScrolled] = useState(true);
-  // const scrollYProgress = useScroll({ target: postref });
-  const scrollPosition = useScrollPosition();
-
-  let scroPos = Math.round(scrollPosition / 100 * 2);
+  const articleRef = useRef();
+  const [scrollValue, setScrollValue] = useState(0);  
 
   useEffect(() => {
+    const onScroll = (e) => {
+      const { height } = articleRef.current.getBoundingClientRect();
+      setScrollValue(e.target.documentElement.scrollTop / (height - window.innerHeight));
+    };
 
-    console.log(scroPos + '%');
+    window.addEventListener('scroll', onScroll);
 
-    if(scrollPosition > 500){
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  })
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollValue]);
+
+
+
 
   return (
     <Layout 
@@ -46,14 +42,20 @@ const PostPage = ({
       metaDescription={post.description} 
       ogImage={post.image}
     >
-      <div id="prog_id" className={!scrolled ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
+      <div id="prog_id" className={(scrollValue < 0.05 || scrollValue > 1.15)  ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
         <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
-          <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" style={{ pathLength: scroPos + '%' }} />      
+          <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} />      
+          {/* <circle cx="50" cy="50" r="30" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} /> */}
         </svg>  
       </div> 
       
+
+
+
+      <div ref={articleRef}>
       <Post post={post} postContent={content} authors={authors} />
+      </div>
       <NextArticle post={nextArticle} />
       <Newsletter newsletter={newsletter} />
     </Layout>
