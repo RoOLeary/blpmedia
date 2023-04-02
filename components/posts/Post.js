@@ -14,9 +14,7 @@ export default function Post({post, postContent, authors}) {
 
   const [isLiked, setIsLiked] = useState(false);
 
-  const addToFaves = (e) => {
-    setIsLiked(!isLiked)
-  } 
+  const addToFaves = (e) => setIsLiked(!isLiked);
   
   return (
     <article className="pb-12 sm:pb-16 lg:pb-24 bg-gray-50">
