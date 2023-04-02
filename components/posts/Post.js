@@ -110,7 +110,7 @@ export default function Post({post, postContent, authors}) {
         </div>
 
         {/* Post Footer */}
-        <footer className="mx-auto mt-12 text-lg divide-y sm:mt-14 max-w-prose divide-y-gray-300/70">
+        <footer className="mx-auto text-lg mt-12 max-w-prose">
          
           {/* Tags */}
           <ul className="flex flex-wrap justify-start pb-8 -m-1 sm:pb-10">
