@@ -86,7 +86,7 @@ export default function Navbar() {
                     
                   ) : (
                     <Link key={index} href={link.link}>
-                      <a className={`px-3 py-1 font-medium text-md ${router.pathname == link.link ? 'text-red-700' : 'text-gray-800 transition duration-300 ease-in-out hover:text-red-700'}`}>
+                      <a className={`px-3 py-1 font-medium text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-gray-800 transition duration-300 ease-in-out hover:text-red-600'}`}>
                         {link.name}
                       </a>
                     </Link>
