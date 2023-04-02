@@ -14,7 +14,7 @@ import { getContentPage } from '../../libs/getContentPage'
 
 export const CheckMark = () => {
   return (
-    <svg viewBox="0 0 20 20" width="20" height="20" className="center-icon">
+    <svg viewBox="0 0 20 20" width="100px" height="100px" className="center-icon">
       <g fill="#f00">
         <rect y={10} width={2} height={2} />
         <rect x={2} y={12} width={2} height={2} />
@@ -33,7 +33,7 @@ export const CheckMark = () => {
 
 export const Close = () => {
   return (
-    <svg viewBox="0 0 20 20" width="20" height="20" className="center-icon">
+    <svg viewBox="0 0 20 20" width="20px" height="20px" className="center-icon">
       <path d="M0,2.9h2.9V0H0V2.9z M2.9,5.7h2.9V2.9H2.9V5.7z M5.7,8.6h2.9V5.7H5.7V8.6z M8.6,11.4h2.9V8.6H8.6V11.4z M5.7,14.3h2.9v-2.9H5.7V14.3z M2.9,17.1h2.9v-2.9H2.9V17.1z M0,20h2.9v-2.9H0V20z M11.4,14.3h2.9v-2.9h-2.9V14.3z M14.3,17.1h2.9v-2.9h-2.9V17.1zM17.1,20H20v-2.9h-2.9V20z M11.4,8.6h2.9V5.7h-2.9V8.6z M14.3,5.7h2.9V2.9h-2.9V5.7z M17.1,2.9H20V0h-2.9V2.9z" />
     </svg>
   );
@@ -76,21 +76,15 @@ const PostPage = ({
       ogImage={post.image}
     >
       <div id="prog_id" className={(scrollValue < 0.05)  ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
-          {/* {complete ? <CheckMark /> : <Close />} */}
           <svg id="progress" width="75" height="75" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
             <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} />
           </svg>  
-       
       </div> 
       
-
-      
-
       <div ref={articleRef}>
       <Post post={post} postContent={content} authors={authors} />
       </div>
-      {complete ? <CheckMark /> : <Close />}
       <NextArticle post={nextArticle} />
       <Newsletter newsletter={newsletter} />
     </Layout>

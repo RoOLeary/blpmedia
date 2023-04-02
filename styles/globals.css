@@ -89,25 +89,9 @@ circle {
 }
 .center-icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.article {
-  height: 3000px;
-  background: linear-gradient(to bottom, #1e5799 0%, #7db9e8 100%);
-}
-
-.button.scrollIcon {
-  position: relative;
-  width: 75px;
-  height: 105px;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  outline: none;
-  cursor: pointer;
-  border: 0;
+  position: absolute;
+  top: -100%;
+  left: 70%;
 }
 
 .circle-progress {
