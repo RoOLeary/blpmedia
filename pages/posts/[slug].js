@@ -68,8 +68,6 @@ const PostPage = ({
   const complete = position === 0;
   const notMoved = position === 1;
 
-  // console.log(complete, scrollValue)
-
   return (
     <Layout 
       metaTitle={post.title} 
@@ -114,7 +112,7 @@ export async function getStaticProps({ params: { slug } }) {
   )
 
   // let remoteSlug = 'can-you-hack-productivity-with-pills';
-  // let url = `https://craft-ezhk.frb.io/api/articles/${remoteSlug}.json`;
+  // let url = `https://craft-ezhk.frb.io/api/articles/${slug}.json`;
   // const res = await fetch(url)
   // const article = await res.json()
   
