@@ -29,14 +29,14 @@ export default function Navbar() {
               {/* Logo */}
               <div className="flex items-center shrink-0">
                 <Link href="/">
-                  <a className="lg:hidden h-9">
+                  <a className="lg:hidden pt-2">
                     <Image 
                       src={siteConfig.logo} 
                       alt={siteConfig.logoText}
-                      width={36}
-                      height={36}
-                      layout="fixed"
-                      className="w-9 h-9"
+                      width={60}
+                      height={60}
+                      
+                      className='p-2'
                     />
                   </a>
                 </Link>
