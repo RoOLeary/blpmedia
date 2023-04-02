@@ -74,7 +74,7 @@ const PostPage = ({
       metaDescription={post.description} 
       ogImage={post.image}
     >
-      <div id="prog_id" className={(scrollValue < 0.05) || (scrollValue >= 1.1) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
+      <div id="prog_id" className={(scrollValue < 0.15) || (scrollValue >= 1.1) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
           <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
             <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} />
