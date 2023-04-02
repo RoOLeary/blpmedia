@@ -5,7 +5,7 @@ import siteConfig from '../../config/site.config.js'
 
 export default function CategoryHeader({category}) {
   return (
-    <section className="py-12 bg-gray-50 sm:py-20 lg:py-24">
+    <section className="py-8 bg-gray-100">
       
       {/* Conatiner */}
       <div className="max-w-xl px-4 mx-auto lg:max-w-screen-xl lg:px-8 md:max-w-3xl sm:px-12">

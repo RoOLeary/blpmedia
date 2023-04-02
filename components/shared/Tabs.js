@@ -1,25 +1,13 @@
 import React, { useState } from 'react';
 
-
 const Tabs = ({ tabs }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
     setActiveTab(index);
-    console.log(tabs.index)
   };
 
   return (
-    // <div>
-    //   <div>
-    //     {tabs.map((tab, index) => (
-    //       <button c onClick={() => handleTabClick(index)}>
-    //         {tab.label}
-    //       </button>
-    //     ))}
-    //   </div>
-    //   <div>{tabs[activeTab].content}</div>
-    // </div>
     <>
         <div className="mx-auto border-b border-gray-200">
             <div className="flex flex-col md:flex-row">
@@ -39,6 +27,9 @@ const Tabs = ({ tabs }) => {
             </div>
             <div className="mt-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h2 className="text-2xl">{tabs[activeTab].content}</h2>
+                <p className='block mt-4 text-base leading-relaxed text-gray-500'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
             </div>
         </div>
     </>
