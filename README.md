@@ -98,13 +98,13 @@ All of the content data is in markdown format. If you are not familiar with mark
 All of the markdown files are located in the `content` directory. Project uses [`gray-matter`](https://github.com/jonschlinkert/gray-matter) to parse our YAML front matter and markdown content. All of the frontmatter data for each content file is located at the top of the file in between 3 hyphens. Below the frontmatter is the markdown content. 
 
 ### Adding new authors
-You can add new or customize existing authors in the `content/authors` directory. Each author's file name is the slug for that particular author's page. For example, the author Isabel Vaz has a corresponding markdown file named `isabel-vaz.md` and an author page at `/authors/isabel-vaz`.
+You can add new or customize existing authors in the `content/authors` directory. Each author's file name is the slug for that particular author's page. For example, the author Summer Smith has a corresponding markdown file named `isabel-vaz.md` and an author page at `/authors/isabel-vaz`.
 
 Every author has data in the following format:
 
 ```markdown
 ---
-name: "Isabel Vaz"
+name: "Summer Smith"
 image: "/images/authors/isabel-vaz.jpeg"
 role: "Staff Writer"
 social_links:

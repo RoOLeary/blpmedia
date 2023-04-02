@@ -3,7 +3,7 @@ title: "Apple to Turn IPhones Into Payment Terminals in Fintech Push"
 description: "Apple Inc. announced that its merchants will be able to accept credit card and digital payments with just a tap on their iPhones, enabling them to bypass hardware systems such as those offered by Square Inc."
 image: "/images/posts/featured-01.jpeg"
 date: "2023-04-20T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 6
 views: 7508
 category: "Technology"

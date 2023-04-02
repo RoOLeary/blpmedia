@@ -3,7 +3,7 @@ title: "So Many Games to Choose From: Here Are Our Top Picks"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-38.jpeg"
 date: "2023-03-02T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 9
 views: 4773
 category: "Entertainment"

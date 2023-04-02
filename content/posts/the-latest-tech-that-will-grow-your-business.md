@@ -3,7 +3,7 @@ title: "The Latest Tech That Will Grow Your Business"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-04.jpeg"
 date: "2023-04-11T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 8
 views: 8399
 category: "Technology"

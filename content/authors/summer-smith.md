@@ -1,5 +1,5 @@
 ---
-name: "Isabel Vaz"
+name: "Summer Smith"
 image: "https://placedog.net/96/96/r"
 role: "Staff Writer"
 social_links:
@@ -12,4 +12,4 @@ social_links:
   - name: "linkedin"
     url: "#"
 ---
-Hot Cellist from Portugal, asleep on the couch beside me. 
+Morty's sister. 

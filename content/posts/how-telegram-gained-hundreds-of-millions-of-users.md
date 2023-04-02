@@ -3,7 +3,7 @@ title: "How Telegram Gained Hundreds of Millions of Users So Fast"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-27.jpeg"
 date: "2023-03-08T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 12
 views: 5492
 category: "Technology"

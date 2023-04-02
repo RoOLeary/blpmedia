@@ -3,7 +3,7 @@ title: "This is What Twitter Crypto Could Look Like"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-11.jpeg"
 date: "2023-03-30T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 4
 views: 6681
 category: "Startup"

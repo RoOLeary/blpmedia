@@ -3,7 +3,7 @@ title: "The 7 Best Monitors in the Market"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/featured-09.jpeg"
 date: "2023-04-03T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 6
 views: 3789
 category: "Technology"

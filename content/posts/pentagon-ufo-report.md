@@ -3,7 +3,7 @@ title: "A Review of the Pentagon UFO Report"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-15.jpeg"
 date: "2021-02-20T16:56:47+06:00"
-author: "Isabel Vaz"
+author: "Summer Smith"
 time_to_read_in_minutes: 14
 views: 9858
 category: "Startup"
