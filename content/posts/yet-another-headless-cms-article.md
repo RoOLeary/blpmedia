@@ -3,12 +3,12 @@ title: "CMS Development with Next.js and Craft CMS"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-41.jpeg"
 date: "2023-05-01T16:56:47+06:00"
-author: "Ro"
+author: "Danger Ro"
 time_to_read_in_minutes: 12
 views: 2620
 category: "Technology"
 tags: ["Growth", "Tips", "Self-improvement", "Morning Routine"]
-group: "Featured"
+group: "Featured"s
 ---
 
 In recent years, headless CMS development has become a popular choice for developers who want to build dynamic, modern web applications. Headless CMS allows you to separate the content management system from the frontend, enabling greater flexibility and scalability for your project. In this article, we'll discuss how to use Next.js as the frontend, Craft CMS for the backend, and GraphQL to build a headless CMS system.
