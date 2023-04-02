@@ -3,7 +3,7 @@ title: "Grand Theft Auto Vice City is Still Awesome"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-34.jpeg"
 date: "2023-01-21T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 5
 views: 8935
 category: "Entertainment"

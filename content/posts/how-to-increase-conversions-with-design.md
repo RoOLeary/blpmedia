@@ -3,7 +3,7 @@ title: "How to Increase Conversions with Design"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-01.jpeg"
 date: "2023-03-31T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 7
 views: 4870
 category: "Startup"

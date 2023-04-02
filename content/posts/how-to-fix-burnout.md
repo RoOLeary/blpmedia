@@ -3,7 +3,7 @@ title: "What is Burnout and How Do I Fix It?"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-42.jpeg"
 date: "2023-03-12T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 9
 views: 3344
 category: "Productivity"

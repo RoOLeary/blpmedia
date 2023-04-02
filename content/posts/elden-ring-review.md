@@ -3,7 +3,7 @@ title: "And The Game Of The Year Goes To: Elden Ring"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-37.jpeg"
 date: "2023-02-25T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 8
 views: 3297
 category: "Entertainment"

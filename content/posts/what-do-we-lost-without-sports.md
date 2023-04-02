@@ -3,7 +3,7 @@ title: "What Do We Lose When We Lose Sports"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-52.jpeg"
 date: "2020-05-20T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 8
 views: 7988
 category: "Culture"

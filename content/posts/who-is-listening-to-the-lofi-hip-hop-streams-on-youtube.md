@@ -3,7 +3,7 @@ title: "Who is Listening to the Lo-Fi Hip-Hop Streams on YouTube"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-30.jpeg"
 date: "2023-02-20T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 8
 views: 3117
 category: "Productivity"

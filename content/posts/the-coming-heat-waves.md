@@ -3,7 +3,7 @@ title: "How to Combat Extreme Heat Waves in Cities"
 description: "Lorem ipsum dolor sit amet tempus bendum labore laoreet.Hendrerit lobortis a leo curabitur faucibus sapien ullamcorper do labore odio."
 image: "/images/posts/archive-22.jpeg"
 date: "2023-02-25T16:56:47+06:00"
-author: "Jack Dunn"
+author: "Morty Smith"
 time_to_read_in_minutes: 11
 views: 1849
 category: "Science"
