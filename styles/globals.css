@@ -53,7 +53,7 @@ body {
 #progress {
   position: fixed; 
   top: 0;
-  right: 30%;
+  right: 0;
   transform: rotate(-90deg);
 }
 
