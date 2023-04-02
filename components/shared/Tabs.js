@@ -28,7 +28,7 @@ const Tabs = ({ tabs }) => {
             <div className="mt-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <h2 className="text-2xl">{tabs[activeTab].content}</h2>
                 <p className='block mt-4 text-base leading-relaxed text-gray-500'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    {tabs[activeTab].content}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
             </div>
         </div>

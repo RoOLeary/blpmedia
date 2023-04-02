@@ -15,7 +15,7 @@ export default function TagHeader({tag}) {
             <p className="text-xs tracking-widest text-red-700 uppercase">
               Recent in
             </p>
-            <h1 className="mt-2 text-3xl font-medium tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight lg:text-5xl">
+            <h1 className="mt-2 text-3xl font-black tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight lg:text-5xl">
               {tag}
             </h1>
           </div>

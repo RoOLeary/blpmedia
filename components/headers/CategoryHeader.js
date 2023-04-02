@@ -28,10 +28,10 @@ export default function CategoryHeader({category}) {
             </div>
 
             <div className="mt-6 text-center md:ml-5 md:mt-0 md:text-left">
-              <p className="text-xs tracking-widest text-red-700 uppercase">
+              <p className="text-xs tracking-widest text-red-700 font-bold uppercase">
                 Recent in
               </p>
-              <h1 className="mt-1.5 text-3xl font-medium tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight lg:text-5xl">
+              <h1 className="mt-1.5 text-5xl font-black tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight lg:text-5xl uppercase">
                 {category.name}
               </h1>
             </div>
@@ -39,7 +39,7 @@ export default function CategoryHeader({category}) {
 
           {/* Breadcrumb */}
           <div className="order-1 md:order-2">
-            <nav aria-label="breadcrumb" className="flex items-center space-x-1.5 sm:space-x-4 text-[15px]">
+            {/* <nav aria-label="breadcrumb" className="flex items-center space-x-1.5 sm:space-x-4 text-[15px]">
               <span>
                 <Link href="/">
                   <a className="flex items-center text-gray-500 no-underline transition duration-300 ease-in-out hover:text-gray-900 hover:no-underline group">
@@ -54,7 +54,7 @@ export default function CategoryHeader({category}) {
                 <ChevronRightIcon className="w-5 h-5 text-gray-400" />
               </span>
               <span className="text-red-700">{category.name}</span>
-            </nav>
+            </nav> */}
           </div>
           
         </div>

@@ -29,7 +29,7 @@ export default function AuthorHeader({author}) {
               <p className="text-xs tracking-widest text-red-700 uppercase">
                 {author.frontmatter.role}
               </p>
-              <h1 className="mt-1.5 text-3xl font-medium tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight">
+              <h1 className="mt-1.5 text-3xl font-black tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight">
                 {author.frontmatter.name}
               </h1>
             </div>

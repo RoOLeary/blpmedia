@@ -5,7 +5,7 @@ export default function SimpleHeader({header}) {
         
         {/* Content */}
         <div className="max-w-xl">
-          <h1 className="text-4xl font-medium tracking-normal text-gray-900 md:tracking-tight lg:leading-tight lg:text-5xl">
+          <h1 className="text-4xl font-black tracking-normal text-gray-900 md:tracking-tight lg:leading-tight lg:text-5xl">
             {header.heading}
           </h1>
           <p className="mt-3 text-lg text-gray-500">
