@@ -73,6 +73,7 @@ const PostPage = ({
       metaTitle={post.title} 
       metaDescription={post.description} 
       ogImage={post.image}
+      keyword={post.tags.toString()}
     >
       <div id="prog_id" className={(scrollValue < 0.15) || (scrollValue >= 1.1) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
           <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
