@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, forwardRef, useRef } from 'react'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 import { marked } from 'marked'
 import { formatDate } from '../../utils/formatDate'
@@ -8,7 +8,8 @@ import { getSocialIconComponent } from '../../utils/getSocialIconComponent'
 import siteConfig from '../../config/site.config.js';
 import { useSession, signIn } from "next-auth/react";
 
-export default function Post({post, postContent, authors}) {
+const Post = forwardRef(({ post, postContent, authors }, ref) => {
+
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}posts/${post.slug}`
   const { data: session, status, loading } = useSession()
 
@@ -17,7 +18,7 @@ export default function Post({post, postContent, authors}) {
   const addToFaves = (e) => setIsLiked(!isLiked);
   
   return (
-    <article className="pb-12 sm:pb-16 lg:pb-24 bg-gray-50">
+    <article className="pb-12 sm:pb-16 lg:pb-24 bg-gray-50" ref={ref}>
       
       {/* Post Header */}
       <header>
@@ -248,4 +249,8 @@ export default function Post({post, postContent, authors}) {
       </div>
     </article>
   )
-}
+});
+
+Post.displayName = 'Post';
+
+export default Post;

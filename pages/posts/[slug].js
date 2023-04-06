@@ -75,16 +75,13 @@ const PostPage = ({
       ogImage={post.image}
       keyword={post.tags.toString()}
     >
-      <div id="prog_id" className={(scrollValue < 0.15) || (scrollValue >= 1.1) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
+      <div id="prog_id" className={(scrollValue < 0.15) || (scrollValue >= 1.15) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
           <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
             <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} />
           </svg>  
       </div> 
-      
-      <div ref={articleRef}>
-      <Post post={post} postContent={content} authors={authors} />
-      </div>
+      <Post post={post} postContent={content} authors={authors} ref={articleRef}/>
       <NextArticle post={nextArticle} />
       <Newsletter newsletter={newsletter} />
     </Layout>
