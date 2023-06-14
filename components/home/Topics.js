@@ -2,9 +2,7 @@ import Link from 'next/link'
 
 export default function Topics({categories}) {
 
-  const filteredCategories = categories.filter(categories => {
-    return categories.slug !== 'startups';
-  });
+  const filteredCategories = categories.filter(categories => categories.slug !== 'startups');
   
   return (
     <section className="w-full pt-12 pb-14 bg-gray-50 sm:py-20 lg:pt-24">
