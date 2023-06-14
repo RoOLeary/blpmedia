@@ -12,11 +12,11 @@ export default function SidebarTags({header, tags}) {
           {tags.map((tag) => (
             <li key={tag}>
               <Link href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`}>
-                <a>
-                  <span className="inline-flex items-center px-4 py-1 m-1 text-sm font-medium text-gray-800 transition duration-300 ease-in-out bg-transparent border rounded-full sm:px-4 sm:py-1.5 border-gray-300/70 hover:text-red-700">
-                    {tag}
-                  </span>
-                </a>
+
+                <span className="inline-flex items-center px-4 py-1 m-1 text-sm font-medium text-gray-800 transition duration-300 ease-in-out bg-transparent border rounded-full sm:px-4 sm:py-1.5 border-gray-300/70 hover:text-red-700">
+                  {tag}
+                </span>
+
               </Link>
             </li>
           ))}
@@ -24,5 +24,5 @@ export default function SidebarTags({header, tags}) {
       </div>
       
     </div>
-  )
+  );
 }

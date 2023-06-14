@@ -30,7 +30,7 @@ export default function Navbar() {
 
               {/* Logo */}
               <div className="flex items-center shrink-0">
-                <Link href="/" className="lg:hidden pt-2">
+                <Link href="/" className="lg:hidden pt-2" legacyBehavior>
                     <Image 
                       src={siteConfig.logo} 
                       alt={siteConfig.logoText}
@@ -40,9 +40,12 @@ export default function Navbar() {
                       className='p-2'
                     />
                 </Link>
-                <Link href="/"  className="hidden lg:block h-9 font-black inter text-2xl">
+                {/* <Link
+                  href="/"
+                  className="hidden lg:block h-9 font-black inter text-2xl"
+                  legacyBehavior>
                   busy<span style={{ color: 'red', fontWeight: 'bold'}}>little</span>pixels:blog
-                </Link>
+                </Link> */}
               </div>
 
               {/* Navigation for large screens */}
@@ -67,9 +70,10 @@ export default function Navbar() {
                           <Menu.Items className="z-20 mt-3 absolute w-52 right-0 rounded-xl bg-white filter drop-shadow p-2.5 space-y-1">
                             {link.submenu.map((subLink, i) => (
                               <Menu.Item key={i}>
-                                <Link href={subLink.link} 
-                                    className={`block rounded-lg py-3.5 px-5 font-medium ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
-                                  >
+                                <Link
+                                  href={subLink.link}
+                                  className={`block rounded-lg py-3.5 px-5 font-medium ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                                  legacyBehavior>
                                     {subLink.name}
                                 
                                 </Link>
@@ -82,7 +86,11 @@ export default function Navbar() {
                     </Menu>
                     
                   ) : (
-                    <Link key={index} href={link.link} className={`px-3 py-1 font-medium text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-gray-800 transition duration-300 ease-in-out hover:text-red-600'}`}>
+                    <Link
+                      key={index}
+                      href={link.link}
+                      className={`px-3 py-1 font-medium text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-gray-800 transition duration-300 ease-in-out hover:text-red-600'}`}
+                      legacyBehavior>
                         {link.name}
                     </Link>
                   )
@@ -117,10 +125,12 @@ export default function Navbar() {
 
                 {menuLinks.mainMenu.map((link, i) =>
                   !link.submenu && (
-                    <Link href={link.link} key={i}
-                        className={`block px-4 py-3 font-medium rounded-lg ${router.pathname == link.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
-                        aria-current="page"
-                      >
+                    <Link
+                      href={link.link}
+                      key={i}
+                      className={`block px-4 py-3 font-medium rounded-lg ${router.pathname == link.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                      aria-current="page"
+                      legacyBehavior>
                         {link.name}
                     </Link>
                   )
@@ -155,6 +165,5 @@ export default function Navbar() {
         </>
       )}
     </Disclosure>
-
-  )
+  );
 }

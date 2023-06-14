@@ -17,8 +17,10 @@ export default function Topics({categories}) {
             
             {filteredCategories.map((category, index) => (
               <div key={index} className="relative z-0 h-40 overflow-hidden transition duration-300 ease-in-out transform translate-y-0 shadow-md cursor-pointer group hover:-translate-y-1">
-                <Link href={`/categories/${category.frontmatter.name.replace(/ /g, '-').toLowerCase()}`}>
-                  <a className="absolute inset-0 z-10 w-full h-full shadow-md" />
+                <Link
+                  href={`/categories/${category.frontmatter.name.replace(/ /g, '-').toLowerCase()}`}
+                  className="absolute inset-0 z-10 w-full h-full shadow-md">
+
                 </Link>
                 
                 {/* Image */}
@@ -42,6 +44,5 @@ export default function Topics({categories}) {
 
       </div>
     </section>
-
-  )
+  );
 }

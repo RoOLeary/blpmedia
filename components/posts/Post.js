@@ -38,8 +38,10 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
           
           {/* Article Information */}
           <div className="pt-10 pb-8 mx-auto mb-8 text-lg border-b max-w-prose border-gray-300/70 sm:pt-16">
-            <Link href={`/categories/${post.category.replace(/ /g, '-').toLowerCase()}`}>
-              <a className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">{post.category}</a>
+            <Link
+              href={`/categories/${post.category.replace(/ /g, '-').toLowerCase()}`}
+              className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
+              {post.category}
             </Link>
             <h2 className="mt-3.5 text-4xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out sm:mt-5 decoration-red-300 decoration-3 group-hover:underline md:tracking-tight sm:leading-tight sm:text-5xl lg:text-6xl">{post.title}
             </h2>
@@ -51,30 +53,34 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
 
             {/* Author meta */}
             <div className="flex items-center mt-6 sm:mt-8">
-              <Link href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}>
-                <a className="flex-shrink-0 mr-3">
-                  <div className="relative w-8 h-8 bg-gray-100 rounded-xl sm:w-9 sm:h-9">
-                    {authors.map((author) =>
-                      post.author === author.frontmatter.name && (
-                        <Image
-                          key={author.frontmatter.name}
-                          className="object-cover object-center rounded-xl" 
-                          src={author.frontmatter.image} 
-                          alt={author.frontmatter.name}
-                          layout="fill"
-                        />
-                      )
-                    )}
-                    <span className="absolute inset-0 shadow-inner rounded-xl" aria-hidden="true" />
-                  </div>
-                </a>
+              <Link
+                href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}
+                className="flex-shrink-0 mr-3">
+
+                <div className="relative w-8 h-8 bg-gray-100 rounded-xl sm:w-9 sm:h-9">
+                  {authors.map((author) =>
+                    post.author === author.frontmatter.name && (
+                      <Image
+                        key={author.frontmatter.name}
+                        className="object-cover object-center rounded-xl" 
+                        src={author.frontmatter.image} 
+                        alt={author.frontmatter.name}
+                        layout="fill"
+                      />
+                    )
+                  )}
+                  <span className="absolute inset-0 shadow-inner rounded-xl" aria-hidden="true" />
+                </div>
+
               </Link>
               <div className="text-sm lg:text-[15px] flex items-center">
                 <span className="hidden text-gray-500 sm:inline-block">By&nbsp;</span>
-                <Link href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}>
-                  <a className="font-medium text-gray-700 hover:underline">
-                    {post.author}
-                  </a>
+                <Link
+                  href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}
+                  className="font-medium text-gray-700 hover:underline">
+
+                  {post.author}
+
                 </Link>
                 <CalendarIcon className="w-[18px] h-[18px] ml-4 text-gray-400" />
                 <span className="ml-1 text-gray-500">{formatDate(post.date)}</span>
@@ -116,11 +122,11 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
             {post.tags.map((tag) => (
               <li key={tag}>
                 <Link href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`}>
-                  <a>
-                    <span className="inline-flex items-center px-4 py-1 m-1 text-sm font-medium text-gray-800 transition duration-300 ease-in-out bg-transparent border rounded-full sm:px-6 sm:py-2 border-gray-300/70 hover:text-red-700">
-                      {tag}
-                    </span>
-                  </a>
+
+                  <span className="inline-flex items-center px-4 py-1 m-1 text-sm font-medium text-gray-800 transition duration-300 ease-in-out bg-transparent border rounded-full sm:px-6 sm:py-2 border-gray-300/70 hover:text-red-700">
+                    {tag}
+                  </span>
+
                 </Link>
               </li>
             ))}
@@ -248,7 +254,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
         
       </div>
     </article>
-  )
+  );
 });
 
 Post.displayName = 'Post';

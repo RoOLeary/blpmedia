@@ -1,12 +1,20 @@
-import Newsletter from '../components/shared/Newsletter'
 import FeaturedArticles from '../components/home/FeaturedArticles'
+import TwoColFeed from '../components/home/TwoColFeed'
+import SingleColFeed from '../components/shared/SingleColFeed'
+import SidebarArticles from '../components/sidebar/SidebarArticles'
+import SidebarTags from '../components/home/SidebarTags'
+import SidebarSocialLinks from '../components/sidebar/SidebarSocialLinks'
+import SidebarInstagramFeed from '../components/sidebar/SidebarInstagramFeed'
+import SidebarAd from '../components/sidebar/SidebarAd'
 import { getArchivedPosts, getFeaturedPosts, getPopularPosts } from '../libs/getPosts'
 import { getAuthors } from '../libs/getAuthors'
 import { getCategories } from '../libs/getCategories'
 import { getTags } from '../libs/getTags'
 import { getInstagramFeed } from '../libs/getInstagramFeed'
 import { getContentPage } from '../libs/getContentPage'
- 
+import BannerArticle from '../components/shared/BannerArticle';
+import Newsletter from '../components/shared/Newsletter'
+import Topics from '../components/home/Topics'
 
 async function getPosts() {
     const res = await getFeaturedPosts();
@@ -14,12 +22,50 @@ async function getPosts() {
     return posts
 }
 
+async function getAuthor() {
+  const res = await getAuthors();
+  const authors = await res;
+  return authors
+}
+
+async function getArchive() {
+  const res = await getArchivedPosts();
+  const authors = await res;
+  return authors
+}
+
+async function getPopular() {
+  const res = await getPopularPosts();
+  const popularPosts = await res;
+  return popularPosts
+}
+
+async function getPostTags() {
+  const res = await getTags(); 
+  const popularTags = await res;
+  return popularTags
+
+}
+
+async function getPostCats() {
+  const res = await getCategories(); 
+  const categories = await res;
+  return categories
+
+}
+
+
+
 
 export default async function Page() {
   
-    const data = await getPosts();
-
-
+    const featuredPosts = await getPosts();
+    const categories = await getPostCats(); 
+    const authors = await getAuthor(); 
+    const archivedPosts = await getArchive();
+    const popularPosts = await getPopular();
+    const tags = await getPostTags(); 
+    const newsletters = getContentPage('content/shared/newsletter.md')
     const tabs = [
       {
         id: 1, 
@@ -40,45 +86,46 @@ export default async function Page() {
   
     return (
       <div>
-        <FeaturedArticles featuredPosts={data.slice(0,7)} />
-         
+        <FeaturedArticles featuredPosts={featuredPosts.slice(0,7)} authors={authors} />
+        <Topics categories={categories} />
         {/* Feed */}
-        {/* <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">
-          <div className="w-full lg:grid lg:gap-8 lg:grid-cols-3">
+        <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">
+          <div className="grid w-full lg:grid lg:gap-8 lg:grid-cols-3">
             <TwoColFeed posts={archivedPosts.slice(0,6)} authors={authors} />
             
-            {/* Sidebar 
+            {/* Sidebar */}
             <div className="w-full max-w-xl px-4 mx-auto mt-12 space-y-8 sm:mt-16 lg:mt-0 md:max-w-3xl sm:px-6 md:px-8 lg:px-0 lg:col-span-1 lg:max-w-none">
               
               <SidebarArticles posts={featuredPosts.slice(7,11)} header="Featured" />
               <SidebarTags tags={tags.slice(0,10)} header="Popular tags" />
               <SidebarSocialLinks />
-              <SidebarInstagramFeed feed={instagramFeed} />
+              {/* <SidebarInstagramFeed feed={instagramFeed} /> */}
             </div>
   
           </div>
-        </section> */}
-        SOMETHING HERE. FROM PAGE
+        </section>
         
-        {/* Feed 2
+        <BannerArticle post={featuredPosts[featuredPosts.length - 1]} authors={authors} />
+
+        {/* Feed 2 */}
         <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
-          <div className="w-full lg:grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
+          <div className="grid w-full lg:grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
   
             <div className="col-span-2">
               <SingleColFeed posts={archivedPosts.slice(6,13)} authors={authors} />
             </div>
   
             {/* Sidebar */}
-            {/* <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
-              <SidebarAd />
+            <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
+              
               <SidebarArticles posts={popularPosts} header="Most read" />
             </div> 
   
           </div>
-        </section> */}
+        </section>
   
         
-        {/* <Newsletter newsletter={newsletter} /> */}
+        <Newsletter newsletter={newsletters} />
        {/* <TestimonialSlider testimonials={testimonials} />
        <Tabs tabs={tabs} /> */}
       </div>

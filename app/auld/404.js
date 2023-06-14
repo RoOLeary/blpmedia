@@ -22,11 +22,11 @@ export default function Custom404({featuredPosts, authors}) {
                 </p>
               </div>
               <div className="inline-block">
-                <Link href="/">
-                  <a className="flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-600 group">
-                    Go back home
-                    <ArrowSmRightIcon className="w-5 h-5 ml-2 transition duration-300 ease-in-out group-hover:text-red-700 group-hover:translate-x-1.5" />
-                  </a>
+                <Link
+                  href="/"
+                  className="flex items-center mt-4 text-red-700 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-600 group">
+                  Go back home<ArrowSmRightIcon className="w-5 h-5 ml-2 transition duration-300 ease-in-out group-hover:text-red-700 group-hover:translate-x-1.5" />
+
                 </Link>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function Custom404({featuredPosts, authors}) {
         </div>
       </section>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {

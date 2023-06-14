@@ -1,9 +1,13 @@
+"use client"; 
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 
 export default function FeaturedArticles({authors, featuredPosts}) {
+
   return (
+   
     <section className="pt-12 sm:pt-16 lg:pt-20 bg-gray-50">
       <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-2xl lg:flex lg:items-start">
         
@@ -11,7 +15,10 @@ export default function FeaturedArticles({authors, featuredPosts}) {
         <article className="relative lg:top-8 lg:w-1/2 lg:sticky">
          
           {/* Image */}
-          <Link href={`/posts/${featuredPosts[0].slug}`} className="relative z-10 block overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
+          <Link
+            href={`/posts/${featuredPosts[0].slug}`}
+            className="relative z-10 block overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group"
+            >
               <Image 
                 className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
                 src={featuredPosts[0].frontmatter.image} 
@@ -23,10 +30,16 @@ export default function FeaturedArticles({authors, featuredPosts}) {
         
           {/* Content */}
           <div className="mt-6 md:align-middle">
-            <Link href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`} className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
+            <Link
+              href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+              className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600"
+              >
                 {featuredPosts[0].frontmatter.category}
             </Link>
-            <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
+            <Link
+              href={`/posts/${featuredPosts[0].slug}`}
+              className="block mt-3 group"
+              >
                 <h2 className="text-3xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out decoration-gray-800 decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">
                   {featuredPosts[0].frontmatter.title}
                 </h2>
@@ -40,8 +53,11 @@ export default function FeaturedArticles({authors, featuredPosts}) {
             
             {/* Author */}
             <div className="flex items-center mt-4 sm:mt-8">
-              <Link href={`/authors/${featuredPosts[0].frontmatter.author.replace(/ /g, '-').toLowerCase()}`} className="relative w-10 h-10 bg-gray-100">
-                  {/* {authors.map((author, i) =>
+              <Link
+                href={`/authors/${featuredPosts[0].frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                className="relative w-10 h-10 bg-gray-100"
+                >
+                  {authors.map((author, i) =>
                     featuredPosts[0].frontmatter.author === author.frontmatter.name && (
                       <Image 
                         key={i}
@@ -51,14 +67,17 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                         layout="fill"
                       />
                     )
-                  )} */}
+                  )}
               
               </Link>
               
               <div className="ml-3">
-                <Link href={`/authors/${featuredPosts[0].frontmatter.author.replace(/ /g, '-').toLowerCase()}`} className="text-sm font-medium text-gray-800 hover:underline">
+                <a
+                  href={`/authors/${featuredPosts[0].frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                  className="text-sm font-medium text-gray-800 hover:underline"
+                  legacyBehavior>
                     {featuredPosts[0].frontmatter.author}
-                </Link>
+                </a>
                 <p className="text-sm text-gray-500">
                   <span>{formatDate(featuredPosts[0].frontmatter.date)}</span>
                   <span aria-hidden="true"> · </span>
@@ -81,7 +100,10 @@ export default function FeaturedArticles({authors, featuredPosts}) {
             {featuredPosts.slice(1, 7).map((post, index) => (
               <article key={index} className={`py-8 sm:flex xl:items-center lg:flex-col xl:flex-row ${index > 0 ? 'border-t lg:border-t-0 xl:border-t border-gray-300/70' : ''}`}>
                 {/* Image */}
-                <Link href={`/posts/${post.slug}`} className="order-2 w-full sm:w-2/5 lg:w-full xl:w-2/5 lg:order-1">
+                <Link
+                  href={`/posts/${post.slug}`}
+                  className="order-2 w-full sm:w-2/5 lg:w-full xl:w-2/5 lg:order-1"
+                  >
                     <div className="relative z-10 overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
                       <Image 
                         className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
@@ -95,25 +117,30 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                 {/* Content */}
                 <div className="order-1 w-full px-2 mt-5 sm:max-w-sm sm:pr-5 sm:pl-0 sm:mt-0 lg:mt-4 xl:mt-0 xl:ml-5 xl:flex-1 lg:order-2">
 
-                  <Link href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`} className="text-xs font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
+                  <Link
+                    href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+                    className="text-xs font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600"
+                    >
                       {post.frontmatter.category}
                   </Link>
 
-                  <Link href={`/posts/${post.slug}`}>
-                   
+                  <Link
+                    href={`/posts/${post.slug.replace(/ /g, '-').toLowerCase()}`}>
                       <h3 className="mt-2 text-xl font-medium leading-normal tracking-normal text-gray-900 transition duration-300 ease-in-out hover:underline decoration-2 decoration-gray-800">
                         {post.frontmatter.title}
                       </h3>
-                    
-                  </Link>
+                    </Link>
                   
                   {/* Author */}
                   <div className="flex items-center justify-between mt-4">
                     
                     {/* Author meta */}
                     <div className="flex items-center justify-center">
-                      <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`} className="relative w-6 h-6 mr-3 bg-gray-100">
-                          {/* {authors.map((author, i) =>
+                      <a
+                        href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                        className="relative w-6 h-6 mr-3 bg-gray-100"
+                        >
+                          {authors.map((author, i) =>
                             post.frontmatter.author === author.frontmatter.name && (
                               <Image 
                                 key={i}
@@ -123,15 +150,18 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                                 layout="fill"
                               />
                             )
-                          )} */}
-                      </Link>
+                          )}
+                      </a>
 
                       <div className="text-sm">
                         <span className="text-gray-500">By </span>
-                        <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`} className="font-medium text-gray-700 hover:underline">
+                        <a
+                          href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                          className="font-medium text-gray-700 hover:underline"
+                          legacyBehavior>
                             {post.frontmatter.author}
                           
-                        </Link>
+                        </a>
                         
                         <span className="text-gray-500 lg:hidden xl:inline-block"> · {formatDate(post.frontmatter.date)}</span>
                       </div>
@@ -150,5 +180,5 @@ export default function FeaturedArticles({authors, featuredPosts}) {
 
       </div>
     </section>
-  )
+  );
 }

@@ -36,10 +36,10 @@ export default function Team({teamSection, authors}) {
                   <div className="mt-6 leading-6">
                     <h3 className="text-xl font-medium text-gray-900">
                       <Link href={`/authors/${author.frontmatter.name.replace(/ /g, '-').toLowerCase()}`}>
-                        <a>
-                          <span className="absolute inset-0" aria-hidden="true"></span>
-                          {author.frontmatter.name}
-                        </a>
+
+                        <span className="absolute inset-0" aria-hidden="true"></span>
+                        {author.frontmatter.name}
+
                       </Link>
                       </h3>
                     <p className="mt-1 text-base text-red-600">{author.frontmatter.role}</p>
@@ -72,5 +72,5 @@ export default function Team({teamSection, authors}) {
         
       </div>
     </section>
-  )
+  );
 }
