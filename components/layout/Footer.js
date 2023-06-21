@@ -29,7 +29,7 @@ export default function Footer() {
                     { getSocialIconComponent({
                       name: item.name, 
                       props: { 
-                        className: "w-3.5 h-3.5 text-gray-700 transition duration-300 ease-in-out transform group-hover:text-red-700 group-hover:scale-110" 
+                        className: "w-3.5 h-3.5 text-white transition duration-300 ease-in-out transform group-hover:text-red-700 group-hover:scale-110" 
                       }
                     }) }
                   </a>
@@ -49,7 +49,7 @@ export default function Footer() {
               (<Link
                 key={item.name}
                 href={item.link}
-                className="px-5 py-2 text-base text-gray-500 transition duration-300 ease-in-out hover:text-red-700">
+                className="px-5 py-2 text-base text-white transition duration-300 ease-in-out hover:text-red-700">
 
                 {item.name}
 
@@ -58,7 +58,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright Text */}
-          <p className="flex items-center justify-center mt-8 ml-0 text-base text-gray-400 md:ml-6 shrink-0 md:mt-0">
+          <p className="flex items-center justify-center mt-8 ml-0 text-base text-white md:ml-6 shrink-0 md:mt-0">
           <Link href="https://busylittlepixels.com" legacyBehavior>
             {siteConfig.copyright}
           </Link>

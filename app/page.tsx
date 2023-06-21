@@ -55,9 +55,7 @@ async function getData(){
     return res.json();
 }
 
-
 export default async function Page() {
-
     const craftData = await getData(); 
     const featuredPosts = await getFeatured(); 
     const authors = await getAllAuthors(); 
@@ -67,48 +65,47 @@ export default async function Page() {
     const archivedPosts = await getAllArchivePosts(); 
     const instagramFeed = await getAllInstas(); 
     const newsletter = getContentPage('content/shared/newsletter.md')
-    
-    console.log(craftData.data[0].title); 
 
 
-  return (
-    <Layout>
-        <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftData.data[0].title}</p></div>
-        <FeaturedArticles featuredPosts={featuredPosts.slice(0,7)} authors={authors} />
-        <Topics categories={categories} />
-        
-        <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">
-            <div className="w-full grid lg:gap-8 lg:grid-cols-3">
-                <TwoColFeed posts={archivedPosts.slice(0,6)} authors={authors} />
-                
-                {/* Sidebar */}
-                <div className="w-full max-w-xl px-4 mx-auto mt-12 space-y-8 sm:mt-16 lg:mt-0 md:max-w-3xl sm:px-6 md:px-8 lg:px-0 lg:col-span-1 lg:max-w-none">
-                    <SidebarArticles posts={featuredPosts.slice(7,11)} header="Featured" />
-                    <SidebarTags tags={tags.slice(0,10)} header="Popular tags" />
-                    <SidebarSocialLinks />
-                    <SidebarInstagramFeed feed={instagramFeed} />
+
+    return (
+        <Layout>
+            <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftData.data[0].title}</p></div>
+            <FeaturedArticles featuredPosts={featuredPosts.slice(0,7)} authors={authors} />
+            <Topics categories={categories} />
+            
+            <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">
+                <div className="w-full grid lg:gap-8 lg:grid-cols-3">
+                    <TwoColFeed posts={archivedPosts.slice(0,6)} authors={authors} />
+                    
+                    {/* Sidebar */}
+                    <div className="w-full max-w-xl px-4 mx-auto mt-12 space-y-8 sm:mt-16 lg:mt-0 md:max-w-3xl sm:px-6 md:px-8 lg:px-0 lg:col-span-1 lg:max-w-none">
+                        <SidebarArticles posts={featuredPosts.slice(7,11)} header="Featured" />
+                        <SidebarTags tags={tags.slice(0,10)} header="Popular tags" />
+                        <SidebarSocialLinks />
+                        <SidebarInstagramFeed feed={instagramFeed} />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <BannerArticle post={featuredPosts[featuredPosts.length - 1]} authors={authors} />
+            <BannerArticle post={featuredPosts[featuredPosts.length - 1]} authors={authors} />
 
-        {/* Feed 2 */}
-        <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
-            <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
-                <div className="col-span-2">
-                    <SingleColFeed posts={archivedPosts.slice(6,13)} authors={authors} />
+            {/* Feed 2 */}
+            <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
+                <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
+                    <div className="col-span-2">
+                        <SingleColFeed posts={archivedPosts.slice(6,13)} authors={authors} />
+                    </div>
+
+                    {/* Sidebar */}
+                    <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
+                        <SidebarAd />
+                        <SidebarArticles posts={popularPosts} header="Most read" />
+                    </div>
                 </div>
+            </section>
 
-                {/* Sidebar */}
-                <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
-                    <SidebarAd />
-                    <SidebarArticles posts={popularPosts} header="Most read" />
-                </div>
-            </div>
-        </section>
-
-        <Newsletter newsletter={newsletter} />        
-    </Layout>
-  )
+            <Newsletter newsletter={newsletter} />        
+        </Layout>
+    )
 }
