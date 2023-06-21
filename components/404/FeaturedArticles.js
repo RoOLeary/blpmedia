@@ -11,33 +11,37 @@ export default function FeaturedArticles({authors, posts}) {
           <article key={index} className={`py-8 lg:py-6 xl:py-8 sm:flex lg:items-center ${index > 0 ? 'border-t xl:border-t-0 border-gray-300/70' : ''}`}>
             
             {/* Image */}
-            <Link href={`/posts/${post.slug}`}>
-              <a className="order-2 w-full sm:w-2/5 lg:w-24 xl:w-1/3 lg:order-1">
-                <div className="relative z-10 overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 lg:aspect-w-1 lg:aspect-h-1 group">
-                  <Image 
-                    className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
-                    src={post.frontmatter.image} 
-                    alt={post.frontmatter.title}
-                    layout="fill"
-                  />
-                </div>
-              </a>
+            <Link
+              href={`/posts/${post.slug}`}
+              className="order-2 w-full sm:w-2/5 lg:w-24 xl:w-1/3 lg:order-1">
+
+              <div className="relative z-10 overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 lg:aspect-w-1 lg:aspect-h-1 group">
+                <Image 
+                  className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
+                  src={post.frontmatter.image} 
+                  alt={post.frontmatter.title}
+                  layout="fill"
+                />
+              </div>
+
             </Link>
 
             {/* Content */}
             <div className="order-1 w-full px-2 mt-5 sm:max-w-sm sm:px-0 sm:mt-0 lg:ml-4 lg:flex-1 lg:order-2 sm:mr-4 lg:mr-0">
-              <Link href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}>
-                <a className="text-xs font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out lg:hidden transition-color hover:text-red-600 2xl:block">
-                  {post.frontmatter.category}
-                </a>
+              <Link
+                href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+                className="text-xs font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out lg:hidden transition-color hover:text-red-600 2xl:block">
+
+                {post.frontmatter.category}
+
               </Link>
 
               <Link href={`/posts/${post.slug}`}>
-                <a>
-                  <h3 className="mt-2 text-lg font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out xl:leading-normal hover:underline decoration-2 decoration-gray-800 lg:text-md xl:text-lg">
-                    {post.frontmatter.title}
-                  </h3>
-                </a>
+
+                <h3 className="mt-2 text-lg font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out xl:leading-normal hover:underline decoration-2 decoration-gray-800 lg:text-md xl:text-lg">
+                  {post.frontmatter.title}
+                </h3>
+
               </Link>
 
               {/* Author */}
@@ -45,28 +49,30 @@ export default function FeaturedArticles({authors, posts}) {
                 
                 {/* Author meta */}
                 <div className="flex items-center justify-center">
-                  <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}>
-                    <a className="relative w-6 h-6 mr-3 bg-gray-100 lg:hidden">
-                      
-                      {authors.map((author, i) =>
-                        post.frontmatter.author === author.frontmatter.name && (
-                          <Image
-                            key={i} 
-                            className="flex-shrink-0 object-cover object-center" 
-                            src={author.frontmatter.image} 
-                            alt={author.frontmatter.name}
-                            layout="fill"
-                          />
-                        )
-                      )}
+                  <Link
+                    href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                    className="relative w-6 h-6 mr-3 bg-gray-100 lg:hidden">
 
-                    </a>
+                    {authors.map((author, i) =>
+                      post.frontmatter.author === author.frontmatter.name && (
+                        <Image
+                          key={i} 
+                          className="flex-shrink-0 object-cover object-center" 
+                          src={author.frontmatter.image} 
+                          alt={author.frontmatter.name}
+                          layout="fill"
+                        />
+                      )
+                    )}
+
                   </Link>
                   
                   <div className="text-sm">
                     <span className="text-gray-500">By </span>
-                    <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}>
-                      <a className="font-medium text-gray-700 hover:underline">{post.frontmatter.author}</a>
+                    <Link
+                      href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                      className="font-medium text-gray-700 hover:underline">
+                      {post.frontmatter.author}
                     </Link>
                     <span className="text-gray-500 lg:hidden"> · {formatDate(post.frontmatter.date)}</span>
                   </div>
@@ -80,5 +86,5 @@ export default function FeaturedArticles({authors, posts}) {
         
       </div>
     </div>
-  )
+  );
 }

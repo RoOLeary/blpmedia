@@ -9,7 +9,7 @@ export default function Newsletter({newsletter}) {
         <div className="flex flex-col items-center max-w-xl mx-auto text-center">
           
   
-          <h2 className="mt-6 text-3xl font-medium tracking-normal text-gray-900 sm:text-4xl sm:mt-8 md:tracking-tight lg:leading-tight lg:text-5xl">{newsletter.frontmatter.title}</h2>
+          <h2 className="mt-6 text-3xl font-black tracking-normal text-gray-900 sm:text-4xl sm:mt-8 md:tracking-tight lg:leading-tight lg:text-5xl">{newsletter.frontmatter.title}</h2>
           <p className="mt-4 text-lg leading-relaxed text-gray-500">
             {newsletter.frontmatter.subtext}
           </p>

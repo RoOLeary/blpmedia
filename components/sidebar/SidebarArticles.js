@@ -13,25 +13,29 @@ export default function SidebarArticles({header, posts}) {
           <article key={index} className="flex space-x-4 sm:space-x-6 lg:space-x-4">
             
             {/* Image */}
-            <Link href={`/posts/${post.slug}`}>
-              <a className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
-                <Image 
-                  className="object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-110" 
-                  src={post.frontmatter.image} 
-                  alt={post.frontmatter.title}
-                  layout="fill"
-                />
-              </a>
+            <Link
+              href={`/posts/${post.slug}`}
+              className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
+
+              <Image 
+                className="object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-110" 
+                src={post.frontmatter.image} 
+                alt={post.frontmatter.title}
+                layout="fill"
+              />
+
             </Link>
             
             {/* Content */}
             <div className="w-2/3">
               <div className="flex flex-col justify-center flex-1 w-full h-full">
                 <div>
-                  <Link href={`/posts/${post.slug}`}>
-                    <a className="font-medium leading-snug tracking-normal text-gray-900 transition duration-300 ease-in-out text-md hover:underline decoration-2 decoration-gray-800">
-                      {post.frontmatter.title}
-                    </a>
+                  <Link
+                    href={`/posts/${post.slug}`}
+                    className="font-medium leading-snug tracking-normal text-gray-900 transition duration-300 ease-in-out text-md hover:underline decoration-2 decoration-gray-800">
+
+                    {post.frontmatter.title}
+
                   </Link>
                 </div>
 
@@ -42,8 +46,10 @@ export default function SidebarArticles({header, posts}) {
                   <div className="flex items-center justify-center">
                     <div className="text-sm">
                       <span className="text-gray-500">By </span>
-                      <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}>
-                        <a className="font-medium text-gray-700 hover:underline" >{post.frontmatter.author}</a>
+                      <Link
+                        href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                        className="font-medium text-gray-700 hover:underline">
+                        {post.frontmatter.author}
                       </Link>
                     </div>
                   </div>
@@ -59,5 +65,5 @@ export default function SidebarArticles({header, posts}) {
       </div>
 
     </div>
-  )
+  );
 }

@@ -23,29 +23,27 @@ export default function Navbar() {
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
       {({ open }) => (
         <>
-          <nav className="flex items-center h-20 px-4 mx-auto max-w-7xl md:px-6">
+          <nav className="flex items-center h-20 px-4 mx-auto md:px-6 darkNav">
             
             {/* Main navbar for large screens */}
             <div className="flex items-center justify-between w-full">
 
               {/* Logo */}
               <div className="flex items-center shrink-0">
-                <Link href="/">
-                  <a className="lg:hidden pt-2">
-                    <Image 
-                      src={siteConfig.logo} 
-                      alt={siteConfig.logoText}
-                      width={60}
-                      height={60}
-                      
-                      className='p-2'
-                    />
-                  </a>
+                <Link href="/" className="lg:hidden pt-2">
+
+                  <Image 
+                    src={siteConfig.logo} 
+                    alt={siteConfig.logoText}
+                    width={60}
+                    height={60}
+                    
+                    className='p-2'
+                  />
+
                 </Link>
-                <Link href="/">
-                  <a className="hidden lg:block h-9 font-black inter text-2xl">
+                <Link href="/" className="hidden lg:block h-9 font-black inter text-2xl">
                   busy<span style={{ color: 'red', fontWeight: 'bold'}}>little</span>pixels:blog
-                  </a>
                 </Link>
               </div>
 
@@ -71,12 +69,12 @@ export default function Navbar() {
                           <Menu.Items className="z-20 mt-3 absolute w-52 right-0 rounded-xl bg-white filter drop-shadow p-2.5 space-y-1">
                             {link.submenu.map((subLink, i) => (
                               <Menu.Item key={i}>
-                                <Link href={subLink.link}>
-                                  <a 
-                                    className={`block rounded-lg py-3.5 px-5 font-medium ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
-                                  >
-                                    {subLink.name}
-                                  </a>
+                                <Link
+                                  href={subLink.link}
+                                  className={`block rounded-lg py-3.5 px-5 font-medium ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}>
+
+                                  {subLink.name}
+
                                 </Link>
                               </Menu.Item>
                             ))}
@@ -87,11 +85,14 @@ export default function Navbar() {
                     </Menu>
                     
                   ) : (
-                    <Link key={index} href={link.link}>
-                      <a className={`px-3 py-1 font-medium text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-gray-800 transition duration-300 ease-in-out hover:text-red-600'}`}>
-                        {link.name}
-                      </a>
-                    </Link>
+                    (<Link
+                      key={index}
+                      href={link.link}
+                      className={`px-3 py-1 font-medium text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
+
+                      {link.name}
+
+                    </Link>)
                   )
                 )}
 
@@ -99,20 +100,12 @@ export default function Navbar() {
 
               {/* Search */}
               <div className="flex">
-              {/* <div className="relative rounded-3xl">
-              {session ? <div className='flex gap-4'>
-                      <a href={`/account`}>
-                      <Image 
-                      src={session.user.image} 
-                      alt={session.user.name}
-                      width={36}
-                      height={36}
-                      layout="fixed"
-                      className="rounded-full w-9 h-9 hover:opacity-50 hover:border-red-500"
-                    /> 
-                  </a>
-                <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
-              </div> */}
+              <div className="relative rounded-3xl">
+                <div className='flex gap-4'>
+                    
+                  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button>
+                </div>
+              </div>
 
               {/* Hamburger menu button */}
               <Disclosure.Button className="flex items-center justify-center p-3 ml-6 transition duration-300 ease-in-out cursor-pointer rounded-xl bg-gray-50 hover:bg-gray-100 md:hidden group focus:outline-none">
@@ -135,14 +128,15 @@ export default function Navbar() {
 
                 {menuLinks.mainMenu.map((link, i) =>
                   !link.submenu && (
-                    <Link href={link.link} key={i}>
-                      <a 
-                        className={`block px-4 py-3 font-medium rounded-lg ${router.pathname == link.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
-                        aria-current="page"
-                      >
-                        {link.name}
-                      </a>
-                    </Link>
+                    (<Link
+                      href={link.link}
+                      key={i}
+                      className={`block px-4 py-3 font-medium rounded-lg ${router.pathname == link.link ? 'text-white text-red-700' : 'text-gray-800 hover:text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                      aria-current="page">
+
+                      {link.name}
+
+                    </Link>)
                   )
                 )}
               </div>
@@ -175,6 +169,5 @@ export default function Navbar() {
         </>
       )}
     </Disclosure>
-
-  )
+  );
 }

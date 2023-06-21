@@ -11,10 +11,7 @@ export default function Layout({ children }) {
             <meta property="og:description" content="Experts in everything goddamnit!" />
        </head>
         <body>
-            <main>   
-                
-                    {children}
-             </main>      
+            {children}
         </body>
       </html>
     );

@@ -13,9 +13,9 @@ export default function NextArticle({post}) {
         </div>
       </div>
 
-      <Link href={`/posts/${post.slug}`}>
-        <a className="absolute inset-0" />
+      <Link href={`/posts/${post.slug}`} className="absolute inset-0">
+
       </Link>
     </section>
-  )
+  );
 }

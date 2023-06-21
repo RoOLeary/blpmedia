@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+
+
+
+.darkNav{
+ @apply bg-black text-white;
+}
+
 
 .js-hamburger-open span:nth-child(1) {
   @apply w-0 top-1.5 left-1/2;
@@ -99,3 +105,5 @@ circle {
   left: 0;
   top: 0;
 }
+
+@tailwind utilities;

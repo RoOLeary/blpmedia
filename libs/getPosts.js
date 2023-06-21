@@ -100,8 +100,8 @@ export function getPostsWithTag(tagSlug) {
   
   const postsWithTag = posts.filter((post) => {
     return post.frontmatter.tags.some((tag) => {
-      return tag.toLowerCase().replace(/ /g, '-') === tagSlug
-    })
+      return tag.toLowerCase().replace(/ /g, '-') === tagSlug;
+    });
   })
 
   return postsWithTag

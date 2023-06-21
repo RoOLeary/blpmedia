@@ -16,6 +16,13 @@ module.exports = {
         "6xl": "2.75rem",
       },
 
+      backgroundColor:{
+        biege: '#e7e2cc',
+        offwhite: '#FAF9F6',
+        greenish: '#88A91E',
+        black: '#000000' 
+      },
+
       maxWidth: {
         'xxs': '16rem'
       },

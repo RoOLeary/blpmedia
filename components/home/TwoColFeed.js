@@ -27,14 +27,14 @@ export default function TwoColFeed({posts, authors}) {
             {/* Image */}
             <div className="relative z-10 w-full overflow-hidden aspect-w-2 aspect-h-1 bg-gray-50">
               <Link href={`/posts/${post.slug}`}>
-                <a>
-                  <Image 
-                    className="absolute inset-0 object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-110" 
-                    src={post.frontmatter.image} 
-                    alt={post.frontmatter.title}
-                    layout="fill"
-                  />
-                </a>
+
+                <Image 
+                  className="absolute inset-0 object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-110" 
+                  src={post.frontmatter.image} 
+                  alt={post.frontmatter.title}
+                  layout="fill"
+                />
+
               </Link>
             </div>
           
@@ -42,19 +42,21 @@ export default function TwoColFeed({posts, authors}) {
             <div className="box-border flex flex-col justify-between flex-1 w-full p-6 transition duration-300 ease-in-out bg-white border-b-2 border-l-2 border-r-2 border-gray-100 xl:p-7 group-hover:border-transparent">
               <div>
 
-                <Link href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}>
-                  <a className="relative z-10 font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out text-tiny transition-color hover:text-red-600">
-                    {post.frontmatter.category}
-                  </a>
+                <Link
+                  href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+                  className="relative z-10 font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out text-tiny transition-color hover:text-red-600">
+
+                  {post.frontmatter.category}
+
                 </Link>
                 
                 <h3 className="mt-3 text-xl font-medium leading-tight text-gray-900 transition duration-300 ease-in-out lg:text-xl sm:text-2xl xl:text-2xl decoration-gray-800 decoration-2 hover:underline">
 
                   <Link href={`/posts/${post.slug}`}>
-                    <a>
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      {post.frontmatter.title}
-                    </a>
+
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    {post.frontmatter.title}
+
                   </Link>
                   
                 </h3>
@@ -68,28 +70,32 @@ export default function TwoColFeed({posts, authors}) {
               {/* Author */}
               <div className="flex items-center mt-5 sm:mt-6">
 
-                <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}>
-                  <a className="relative w-10 h-10  bg-gray-50">
-                    {authors.map((author) =>
-                      post.frontmatter.author === author.frontmatter.name && (
-                        <Image 
-                          key={author.frontmatter.name}
-                          className="object-cover object-center w-full h-full transition duration-300 ease-in-out " 
-                          src={author.frontmatter.image} 
-                          alt={author.frontmatter.name}
-                          layout="fill"
-                        />
-                      )
-                    )}
-                  </a>
+                <Link
+                  href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                  className="relative w-10 h-10  bg-gray-50">
+
+                  {authors.map((author) =>
+                    post.frontmatter.author === author.frontmatter.name && (
+                      <Image 
+                        key={author.frontmatter.name}
+                        className="object-cover object-center w-full h-full transition duration-300 ease-in-out " 
+                        src={author.frontmatter.image} 
+                        alt={author.frontmatter.name}
+                        layout="fill"
+                      />
+                    )
+                  )}
+
                 </Link>
 
                 <div className="ml-3">
                   
-                  <Link href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}>
-                    <a className="relative text-sm font-medium text-gray-700 hover:underline">
-                      {post.frontmatter.author}
-                    </a>
+                  <Link
+                    href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                    className="relative text-sm font-medium text-gray-700 hover:underline">
+
+                    {post.frontmatter.author}
+
                   </Link>
               
                   <p className="text-sm text-gray-500">
@@ -109,5 +115,5 @@ export default function TwoColFeed({posts, authors}) {
       </div>
 
     </div>
-  )
+  );
 }

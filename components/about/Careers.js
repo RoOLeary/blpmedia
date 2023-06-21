@@ -13,11 +13,13 @@ export default function Careers({careers}) {
             <p>
               {careers.text}
             </p>
-            <Link href={careers.action.href}>
-              <a className="inline-flex items-center mt-4 text-red-600 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-700 group">
-                {careers.action.text}
-                <ArrowSmRightIcon className="w-5 h-5 ml-2 transition duration-300 ease-in-out group-hover:text-red-700 group-hover:translate-x-1.5" />
-              </a>
+            <Link
+              href={careers.action.href}
+              className="inline-flex items-center mt-4 text-red-600 no-underline transition duration-300 ease-in-out sm:mt-5 hover:text-red-700 group">
+
+              {careers.action.text}
+              <ArrowSmRightIcon className="w-5 h-5 ml-2 transition duration-300 ease-in-out group-hover:text-red-700 group-hover:translate-x-1.5" />
+
             </Link>
           </div>
         </div>
@@ -50,5 +52,5 @@ export default function Careers({careers}) {
         
       </div>
     </section>
-  )
+  );
 }

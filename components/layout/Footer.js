@@ -7,17 +7,15 @@ import { getSocialIconComponent } from '../../utils/getSocialIconComponent'
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-white sm:py-20 lg:py-24">
+    <footer className="py-12 bg-black text-white sm:py-20 lg:py-24">
       <div className="max-w-2xl px-4 mx-auto lg:max-w-screen-xl sm:px-6 lg:px-8">
 
         {/* Logo & Social Links */}
         <div className="sm:flex sm:justify-between sm:items-center">
           {/* Logo */}
           <div className="flex items-center justify-center">
-            <Link href="/">
-              <a className="hidden lg:block h-9 font-black inter text-2xl">
+            <Link href="/" className="hidden lg:block h-9 font-black inter text-2xl">
               busy<span style={{ color: 'red', fontWeight: 'bold'}}>little</span>pixels:blog
-              </a>
             </Link>
           </div>
 
@@ -48,23 +46,25 @@ export default function Footer() {
           {/* Footer Links */}
           <nav className="flex flex-wrap items-center justify-center -mx-5 -my-2 md:justify-start" aria-label="Footer">
             {MenuLinks.footer.map((item) => (
-              <Link key={item.name} href={item.link}>
-                <a className="px-5 py-2 text-base text-gray-500 transition duration-300 ease-in-out hover:text-red-700">
-                  {item.name}
-                </a>
-              </Link>
+              (<Link
+                key={item.name}
+                href={item.link}
+                className="px-5 py-2 text-base text-gray-500 transition duration-300 ease-in-out hover:text-red-700">
+
+                {item.name}
+
+              </Link>)
             ))}
           </nav>
 
           {/* Copyright Text */}
           <p className="flex items-center justify-center mt-8 ml-0 text-base text-gray-400 md:ml-6 shrink-0 md:mt-0">
-          <Link href="https://busylittlepixels.com">
+          <Link href="https://busylittlepixels.com" legacyBehavior>
             {siteConfig.copyright}
           </Link>
           </p>
         </div>
       </div>
     </footer>
-
-  )
+  );
 }

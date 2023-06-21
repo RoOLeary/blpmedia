@@ -24,11 +24,13 @@ export default function TagHeader({tag}) {
           <div className="hidden md:block">
             <nav aria-label="breadcrumb" className="flex items-center space-x-1.5 sm:space-x-4 text-[15px]">
               <span>
-                <Link href="/">
-                  <a className="flex items-center text-gray-500 no-underline transition duration-300 ease-in-out hover:text-gray-900 hover:no-underline group">
-                    <HomeIcon className="sm:inline-block hidden flex-shrink-0 w-[1.125rem] h-[1.125rem] mr-2 text-gray-400 transition duration-300 ease-in-out group-hover:text-gray-500" />
-                    {siteConfig.logoText}
-                  </a>
+                <Link
+                  href="/"
+                  className="flex items-center text-gray-500 no-underline transition duration-300 ease-in-out hover:text-gray-900 hover:no-underline group">
+
+                  <HomeIcon className="sm:inline-block hidden flex-shrink-0 w-[1.125rem] h-[1.125rem] mr-2 text-gray-400 transition duration-300 ease-in-out group-hover:text-gray-500" />
+                  {siteConfig.logoText}
+
                 </Link>
                 
               </span>
@@ -44,5 +46,5 @@ export default function TagHeader({tag}) {
       </div>
 
     </section>
-  )
+  );
 }
