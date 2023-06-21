@@ -70,7 +70,7 @@ export default async function Page() {
 
     return (
         <Layout>
-            <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftData.data[0].title}</p></div>
+            {/* <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftData.data[0].title}</p></div> */}
             <FeaturedArticles featuredPosts={featuredPosts.slice(0,7)} authors={authors} />
             <Topics categories={categories} />
             
