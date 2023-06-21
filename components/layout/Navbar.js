@@ -1,8 +1,10 @@
+'use client';
+
 import Link from 'next/link'
 import Image from 'next/image'
 import menuLinks from '../../config/menus.js'
 import siteConfig from '../../config/site.config.js'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
 import { Disclosure, Menu } from '@headlessui/react'
 import { ChevronDownIcon, SearchIcon } from '@heroicons/react/solid'
@@ -14,8 +16,8 @@ import { useSession, signIn, signOut } from "next-auth/react"
 // If loading a variable font, you don't need t
 
 export default function Navbar() {
-  const router = useRouter();
-  const { data: session } = useSession()
+  const router = usePathname();
+  // const { data: session } = useSession()
 
   return (
     <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
@@ -97,7 +99,7 @@ export default function Navbar() {
 
               {/* Search */}
               <div className="flex">
-              <div className="relative rounded-3xl">
+              {/* <div className="relative rounded-3xl">
               {session ? <div className='flex gap-4'>
                       <a href={`/account`}>
                       <Image 
@@ -110,7 +112,7 @@ export default function Navbar() {
                     /> 
                   </a>
                 <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log out</button></div> :  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button> }
-              </div>
+              </div> */}
 
               {/* Hamburger menu button */}
               <Disclosure.Button className="flex items-center justify-center p-3 ml-6 transition duration-300 ease-in-out cursor-pointer rounded-xl bg-gray-50 hover:bg-gray-100 md:hidden group focus:outline-none">
