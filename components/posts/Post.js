@@ -11,7 +11,6 @@ import siteConfig from '../../config/site.config.js';
 
 const Post = forwardRef(({ post, postContent, authors }, ref) => {
 
-  console.log(postContent);
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}posts/${post.slug}`
   // const { data: session, status, loading } = useSession()
 

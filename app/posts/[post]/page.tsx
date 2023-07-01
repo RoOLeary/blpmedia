@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Layout from '../../../components/layout/Layout'
 import Post from '../../../components/posts/Post'
 
-async function getData(slug) {
-    const res = await fetch(`https://craft-ezhk.frb.io/api/articles/${slug}.json`, { next: { revalidate: 30 } });
+async function getData(slug:string) {
+    const res = await fetch(`https://craft-ezhk.frb.io/api/articles/${slug}.json`, );
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
