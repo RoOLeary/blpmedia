@@ -5,7 +5,7 @@ import { formatDate } from '../../utils/formatDate'
 export default function FeaturedArticles({authors, posts}) {
   return (
     <div className="mt-12 sm:mt-16 lg:mt-0 lg:ml-12 lg:w-1/2 xl:w-3/5 xl:ml-16">
-      <h3 className="pb-2.5 text-2xl font-medium text-gray-900 border-b border-gray-300/70 relative before:content-[''] before:left-0 before:w-24 before:h-px before:-bottom-px before:bg-red-600 before:absolute">Recent stories</h3>
+      <h3 className="pb-2.5 text-2xl font-bold text-gray-900 border-b border-gray-300/70 relative before:content-[''] before:left-0 before:w-24 before:h-px before:-bottom-px before:bg-red-600 before:absolute">Recent stories</h3>
       <div className="grid xl:grid-cols-2 lg:gap-x-6">
         {posts.map((post, index) => (
           <article key={index} className={`py-8 lg:py-6 xl:py-8 sm:flex lg:items-center ${index > 0 ? 'border-t xl:border-t-0 border-gray-300/70' : ''}`}>

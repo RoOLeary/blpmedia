@@ -11,5 +11,5 @@ export default {
   "logoText" : "BLP",
   "favicon" : "/favicon.ico",
   "postPerPage" : 6,
-  "copyright" : "© 2023 busylittlepixels. All rights reserved."
+  "copyright" : "© 2023 busy<span style='color': 'red'>little</span>pixels. All rights reserved."
 }
