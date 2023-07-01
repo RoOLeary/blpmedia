@@ -1,26 +1,50 @@
 "use client"; 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, forwardRef, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 // import { marked } from 'marked'
 // import { formatDate } from '../../utils/formatDate'
 import { getSocialIconComponent } from '../../utils/getSocialIconComponent'
 import siteConfig from '../../config/site.config.js';
 // import { useSession, signIn } from "next-auth/react";
+import Progress from './Progress';
 
-const Post = forwardRef(({ post, postContent, authors }, ref) => {
+const Post = ({ post, postContent }) => {
 
+  console.log(post.articleImageUrl);
+  
+  const articleRef = useRef();
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}posts/${post.slug}`
   // const { data: session, status, loading } = useSession()
-
+ 
   const [isLiked, setIsLiked] = useState(false);
-
   const addToFaves = (e) => setIsLiked(!isLiked);
+  const [scrollValue, setScrollValue] = useState(0);  
+
+  useEffect(() => {
+    const onScroll = (e) => {
+      const { height } = articleRef.current.getBoundingClientRect();
+      setScrollValue(e.target.documentElement.scrollTop / (height - window.innerHeight));
+  };
+
+  window.addEventListener('scroll', onScroll);
+
+    return () => window.removeEventListener('scroll', onScroll);
+    }, [scrollValue]);
+
+    const position = Math.max(1 - scrollValue, 0);
+    const complete = position === 0;
+    const notMoved = position === 1;
   
   return (
-    <article className="pb-12 sm:pb-16 lg:pb-24 bg-gray-50" ref={ref}>
-      
+    <article className="pb-12 sm:pb-16 lg:pb-24 bg-gray-50" ref={articleRef}>
+      <div id="prog_id" className={(scrollValue < 0.15) || (scrollValue >= 1.15) ? `opacity-0` : `opacity-100 transition-all duration-300 ease-in-out`}>
+          <svg id="progress" width="50" height="50" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
+              <circle cx="50" cy="50" r="30" pathLength="1" className="indicator" strokeDashoffset="0px" strokeDasharray={`${scrollValue}px 1px`} />
+          </svg>  
+      </div>
       {/* Post Header */}
       <header>
        
@@ -39,12 +63,12 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
           
           {/* Article Information */}
           <div className="pt-10 pb-8 mx-auto mb-8 text-lg border-b max-w-prose border-gray-300/70 sm:pt-16">
-            {/* <Link
-              href={`/categories/${post.category.replace(/ /g, '-').toLowerCase()}`}
+            <Link
+              href={`/categories/`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
               {post.category}
-            </Link> */}
-            <h2 className="mt-3.5 text-4xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out sm:mt-5 decoration-red-300 decoration-3 group-hover:underline md:tracking-tight sm:leading-tight sm:text-5xl lg:text-6xl">{post.title}
+            </Link>
+            <h2 className="mt-3.5 text-4xl font-black tracking-tight text-gray-900 transition duration-300 ease-in-out sm:mt-5 decoration-red-300 decoration-3 group-hover:underline md:tracking-tight sm:leading-tight sm:text-5xl lg:text-6xl">{post.title}
             </h2>
             <div>
               <p className="mt-4 text-base leading-loose text-gray-600">
@@ -196,7 +220,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
       </div>
     </article>
   );
-});
+}
 
 Post.displayName = 'Post';
 

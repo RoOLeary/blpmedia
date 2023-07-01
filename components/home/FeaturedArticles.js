@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 
-export default function FeaturedArticles({authors, featuredPosts}) {
-  const slug = 'can-you-hack-productivity-with-pills';
+export default function FeaturedArticles({authors, featuredPosts, firstSlug}) {
+
   return (
     <section className="pt-12 sm:pt-16 lg:pt-20 bg-gray-50">
       <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-2xl lg:flex lg:items-start">
@@ -14,7 +14,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
           {/* Image */}
           
           <Link
-            href={`/posts/${slug}`}
+            href={`/posts/${firstSlug}`}
             className="relative z-10 block overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
 
             <Image 
@@ -29,13 +29,14 @@ export default function FeaturedArticles({authors, featuredPosts}) {
           {/* Content */}
           <div className="mt-6 md:align-middle">
             <Link
-              href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+              href={`/posts/${firstSlug}`}
+              // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
               {featuredPosts[0].frontmatter.category}
 
             </Link>
-            <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
+            <Link href={`/posts/${firstSlug}`} className="block mt-3 group">
 
               <h2 className="text-3xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out decoration-gray-800 decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">
                 {featuredPosts[0].frontmatter.title}

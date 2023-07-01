@@ -43,7 +43,7 @@ export default function Navbar() {
 
                 </Link>
                 <Link href="/" className="hidden lg:block h-9 font-black inter text-2xl">
-                  busy<span style={{ color: 'red', fontWeight: 'bold'}}>little</span>pixels:blog
+                  b<span style={{ color: 'red', fontWeight: 'bold'}}>li</span>p
                 </Link>
               </div>
 
@@ -71,7 +71,7 @@ export default function Navbar() {
                               <Menu.Item key={i}>
                                 <Link
                                   href={subLink.link}
-                                  className={`block rounded-lg py-3.5 px-5 font-medium ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}>
+                                  className={`block rounded-lg py-3.5 px-5 font-bold ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}>
 
                                   {subLink.name}
 
@@ -88,7 +88,7 @@ export default function Navbar() {
                     (<Link
                       key={index}
                       href={link.link}
-                      className={`px-3 py-1 font-medium text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
+                      className={`px-3 py-1 font-bold text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
 
                       {link.name}
 
@@ -131,7 +131,7 @@ export default function Navbar() {
                     (<Link
                       href={link.link}
                       key={i}
-                      className={`block px-4 py-3 font-medium rounded-lg ${router.pathname == link.link ? 'text-white text-red-700' : 'text-gray-800 hover:text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                      className={`block px-4 py-3 font-bold rounded-lg ${router.pathname == link.link ? 'text-white text-red-700' : 'text-gray-800 hover:text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
                       aria-current="page">
 
                       {link.name}

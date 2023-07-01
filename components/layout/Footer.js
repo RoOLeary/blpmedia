@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-center justify-center">
             <Link href="/" className="hidden lg:block h-9 font-black inter text-2xl">
-              busy<span style={{ color: 'red', fontWeight: 'bold'}}>little</span>pixels:blog
+              b<span style={{ color: 'red', fontWeight: 'bold'}}>li</span>p
             </Link>
           </div>
 
