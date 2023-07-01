@@ -12,7 +12,6 @@ import Progress from './Progress';
 
 const Post = ({ post, postContent }) => {
 
-  console.log(post.articleImageUrl);
   
   const articleRef = useRef();
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}posts/${post.slug}`
