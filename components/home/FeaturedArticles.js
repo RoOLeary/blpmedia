@@ -12,7 +12,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
          
           {/* Image */}
           <Link
-            href={`/posts/${featuredPosts[0].slug}`}
+            href={`/posts/can-you-hack-productivity-with-pills`}
             className="relative z-10 block overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
 
             <Image 

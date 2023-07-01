@@ -1,17 +1,19 @@
+"use client"; 
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, forwardRef, useRef } from 'react'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
-import { marked } from 'marked'
-import { formatDate } from '../../utils/formatDate'
+// import { marked } from 'marked'
+// import { formatDate } from '../../utils/formatDate'
 import { getSocialIconComponent } from '../../utils/getSocialIconComponent'
 import siteConfig from '../../config/site.config.js';
-import { useSession, signIn } from "next-auth/react";
+// import { useSession, signIn } from "next-auth/react";
 
 const Post = forwardRef(({ post, postContent, authors }, ref) => {
 
+  console.log(postContent);
   let pageUrl = `${siteConfig.baseURL.replace(/\/$|$/, '/')}posts/${post.slug}`
-  const { data: session, status, loading } = useSession()
+  // const { data: session, status, loading } = useSession()
 
   const [isLiked, setIsLiked] = useState(false);
 
@@ -27,8 +29,8 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
         <div className="w-full bg-gray-100 aspect-w-3 aspect-h-2 sm:aspect-h-1">
           <Image 
             className="object-cover object-center" 
-            src={post.image} 
-            alt={post.title}
+            src={post.articleImageUrl} 
+            alt={post.articleImageAlt}
             layout="fill"
           />
         </div>
@@ -38,11 +40,11 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
           
           {/* Article Information */}
           <div className="pt-10 pb-8 mx-auto mb-8 text-lg border-b max-w-prose border-gray-300/70 sm:pt-16">
-            <Link
+            {/* <Link
               href={`/categories/${post.category.replace(/ /g, '-').toLowerCase()}`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
               {post.category}
-            </Link>
+            </Link> */}
             <h2 className="mt-3.5 text-4xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out sm:mt-5 decoration-red-300 decoration-3 group-hover:underline md:tracking-tight sm:leading-tight sm:text-5xl lg:text-6xl">{post.title}
             </h2>
             <div>
@@ -53,7 +55,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
 
             {/* Author meta */}
             <div className="flex items-center mt-6 sm:mt-8">
-              <Link
+              {/* <Link
                 href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}
                 className="flex-shrink-0 mr-3">
 
@@ -72,24 +74,24 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
                   <span className="absolute inset-0 shadow-inner rounded-xl" aria-hidden="true" />
                 </div>
 
-              </Link>
+              </Link> */}
               <div className="text-sm lg:text-[15px] flex items-center">
                 <span className="hidden text-gray-500 sm:inline-block">By&nbsp;</span>
-                <Link
+                {/* <Link
                   href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}
                   className="font-medium text-gray-700 hover:underline">
 
                   {post.author}
 
-                </Link>
+                </Link> */}
                 <CalendarIcon className="w-[18px] h-[18px] ml-4 text-gray-400" />
-                <span className="ml-1 text-gray-500">{formatDate(post.date)}</span>
+                {/* <span className="ml-1 text-gray-500">{formatDate(post.date)}</span> */}
                 
                 <span className="items-center hidden sm:flex">
                   <ClockIcon className="w-[18px] h-[18px] ml-3 text-gray-400" />
                   <span className="ml-1 text-gray-500">{post.time_to_read_in_minutes} min read</span>
                 </span>
-                {session ?
+                {/* {session ?
                 <span className="items-center hidden sm:flex ml-2">
                   <button onClick={(e) => addToFaves(e)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill={isLiked ? '#f00' :"none"} viewBox="0 0 24 24" strokeWidth={1.5} stroke={isLiked ? '#f00' :"#c0c2c9"} className="w-6 h-6">
@@ -97,7 +99,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
                     </svg>
                   </button>
                   <span className="ml-1 text-gray-500">{!isLiked ? 'add to' : "remove from "} favourites</span>
-                </span> : null}
+                </span> : null} */}
               </div>
             </div>
             
@@ -111,7 +113,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
         
         {/* Post Content */}
         {/* Uses the official Tailwind CSS Typography plugin */}
-        <div className="mx-auto prose sm:prose-lg hover:prose-a:text-red-700 prose-a:duration-300 prose-a:ease-in-out prose-a:transition  first-letter:text-4xl first-letter:font-bold first-letter:tracking-[.15em]" dangerouslySetInnerHTML={{ __html: marked.parse(postContent) }}>
+        <div className="mx-auto prose sm:prose-lg hover:prose-a:text-red-700 prose-a:duration-300 prose-a:ease-in-out prose-a:transition  first-letter:text-4xl first-letter:font-bold first-letter:tracking-[.15em]" dangerouslySetInnerHTML={{ __html: postContent }}>
         </div>
 
         {/* Post Footer */}
@@ -119,7 +121,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
          
           {/* Tags */}
           <ul className="flex flex-wrap justify-start pb-8 -m-1 sm:pb-10">
-            {post.tags.map((tag) => (
+            {/* {post.tags.map((tag) => (
               <li key={tag}>
                 <Link href={`/tags/${tag.replace(/ /g, '-').toLowerCase()}`}>
 
@@ -129,7 +131,7 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
 
                 </Link>
               </li>
-            ))}
+            ))} */}
           </ul>
 
           {/* Social Share Buttons */}
@@ -189,66 +191,6 @@ const Post = forwardRef(({ post, postContent, authors }, ref) => {
             </div>
           </div>
 
-          {/* Author Details */}
-          {authors.map((author) =>
-            post.author === author.frontmatter.name && (
-              <div key={author.frontmatter.name} className="py-8 sm:py-10">
-                <div className="flex items-center justify-between w-full">
-                  <div className="flex flex-col sm:flex-row">
-                  
-                    {/* Image */}
-                    <div className="flex-shrink-0">
-                      <div className="relative w-20 h-20 bg-gray-100 sm:w-24 sm:h-24">
-                        <Image 
-                          className="object-cover object-center" 
-                          src={author.frontmatter.image} 
-                          alt={author.frontmatter.name}
-                          layout="fill"
-                        />
-                        <span className="absolute inset-0 shadow-inner rounded-2xl" aria-hidden="true" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="mt-5 text-left sm:mt-0 sm:ml-6">
-                      <div className="flex items-center justify-between">
-                        <div className="'flex flex-col">
-                          <p className="text-xs tracking-widest text-red-600 uppercase">
-                            {author.frontmatter.role}
-                          </p>
-                          <h1 className="mt-1 text-xl font-medium tracking-normal text-gray-900 md:tracking-tight lg:leading-tight">
-                            {author.frontmatter.name}
-                          </h1>
-                        </div>
-                      </div>
-                      <div className="mt-2.5 text-base leading-loose text-gray-500" dangerouslySetInnerHTML={{ __html: marked.parse(author.bio) }}>
-                      </div>
-                      
-                      {/* Author Social Links */}
-                      <ul className="flex items-center mt-3.5 space-x-3">
-                        
-                        {author.frontmatter.social_links.map((socialLink) => (
-                          <li key={socialLink.name}>
-                            <a href={socialLink.url} className="group">
-                              { getSocialIconComponent({
-                                name: socialLink.name, 
-                                props: { 
-                                  className: "w-5 h-5 text-gray-400 transition duration-300 ease-in-out group-hover:text-gray-600" 
-                                }
-                              }) }
-                            </a>
-                          </li>
-                        ))}
-                        
-                      </ul>
-                      
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            )
-          )}
 
         </footer>
         
