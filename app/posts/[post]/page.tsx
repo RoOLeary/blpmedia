@@ -5,7 +5,6 @@ import Layout from '../../../components/layout/Layout'
 import Post from '../../../components/posts/Post'
 
 async function getData(slug) {
-    console.log('slug: ', slug);
     const res = await fetch(`https://craft-ezhk.frb.io/api/articles/${slug}.json`, { next: { revalidate: 30 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');

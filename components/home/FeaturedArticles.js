@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 
 export default function FeaturedArticles({authors, featuredPosts}) {
+  const slug = 'can-you-hack-productivity-with-pills';
   return (
     <section className="pt-12 sm:pt-16 lg:pt-20 bg-gray-50">
       <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-2xl lg:flex lg:items-start">
@@ -11,8 +12,9 @@ export default function FeaturedArticles({authors, featuredPosts}) {
         <article className="relative lg:top-8 lg:w-1/2 lg:sticky">
          
           {/* Image */}
+          
           <Link
-            href={`/posts/can-you-hack-productivity-with-pills`}
+            href={`/posts/${slug}`}
             className="relative z-10 block overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
 
             <Image 
