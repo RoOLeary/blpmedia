@@ -42,7 +42,7 @@ const RemotePost = ({ post }) => {
             
     {/* Image */}
     <Link
-      href={`posts/${uri}`}
+      href={`/posts/${uri}`}
       className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
         <Image 
          className="hidden object-cover w-full h-full lg:block" 
@@ -59,7 +59,7 @@ const RemotePost = ({ post }) => {
       <div className="flex flex-col justify-center flex-1 w-full h-full">
         <div>
           <Link
-            href={`/${uri}`}
+            href={`/posts/${uri}`}
             className="font-black leading-snug tracking-normal text-gray-900 transition duration-300 ease-in-out text-md hover:underline decoration-2 decoration-gray-800">
 
             {headline}
