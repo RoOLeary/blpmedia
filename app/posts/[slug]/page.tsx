@@ -97,7 +97,7 @@ export default async function Page({ params }){
 
   let remoteposts = await getRemotePost(); 
   const remoteData = Object.entries(remoteposts).map((post, i) => {
-    const output = Object.entries(post[1]).map((p, i) => <RemotePost key={i} post={p[1]} />) //title={p[1].headline} content={p[1].body_text} excerpt={p[1].description_text} />)
+    const output = Object.entries(post[1]).map((p, i) => <RemotePost key={i} post={p[1]} />).slice(1,19) //title={p[1].headline} content={p[1].body_text} excerpt={p[1].description_text} />)
     return output;
   });
 
