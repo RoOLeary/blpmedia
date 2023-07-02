@@ -44,7 +44,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
             </Link>
             <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
 
-              <h2 className="text-3xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out decoration-gray-800 decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">
+              <h2 className="text-3xl font-black tracking-normal text-gray-900 transition duration-300 ease-in-out decoration-gray-800 decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">
                 {featuredPosts[0].title}
               </h2>
               <div>
