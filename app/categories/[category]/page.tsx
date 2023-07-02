@@ -17,7 +17,6 @@ async function getTechData(){
 }
 
 
-
 export default async function Page({ params }) {
 
     const techPosts = await getTechData(); 
