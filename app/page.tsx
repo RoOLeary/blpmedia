@@ -55,6 +55,14 @@ async function getData(){
     return res.json();
 }
 
+async function getArticles(){
+    const res = await fetch('https://craft-ezhk.frb.io/api/articles.json', { next: { revalidate: 30 } });
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    return res.json();
+}
+
 export default async function Page() {
     const craftData = await getData(); 
     const featuredPosts = await getFeatured(); 
@@ -66,12 +74,13 @@ export default async function Page() {
     const instagramFeed = await getAllInstas(); 
     const newsletter = getContentPage('content/shared/newsletter.md')
 
-
+    const articles = await getArticles();
+    console.log(articles.data.slice(0,1));
 
     return (
         <Layout>
-            {/* <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftData.data[0].title}</p></div> */}
-            <FeaturedArticles featuredPosts={featuredPosts.slice(0,7)} authors={authors} firstSlug={'can-you-hack-productivity-with-pills'}/>
+            {/* <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftdata[0].title}</p></div> */}
+            <FeaturedArticles featuredPosts={articles.data.slice(0,7)} authors={authors} firstSlug={'can-you-hack-productivity-with-pills'} articles={articles.data}/>
             <Topics categories={categories} />
             
             <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">
