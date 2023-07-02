@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import AnimationWrapper from '../shared/AnimationWrapper'
 import siteConfig from '../../config/site.config';
 
 export default function Layout({
@@ -43,9 +44,9 @@ export default function Layout({
       </Head>
 
       <Navbar />
-
+      <AnimationWrapper>
       {children}
-
+      </AnimationWrapper>
       <Footer />
     </>
   );
