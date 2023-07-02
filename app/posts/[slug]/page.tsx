@@ -21,18 +21,20 @@ async function getRemotePost(){
 }
 
 const slugify = (str) => {
-  console.log(str.toLowerCase());
-  // str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
-  // str = str.toLowerCase(); // convert string to lowercase
-  // str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
-  //          .replace(/\s+/g, '-') // replace spaces with hyphens
-  //          .replace(/-+/g, '-'); // remove consecutive hyphens
-  // return str;
+  
+  str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
+  str = str.toLowerCase(); // convert string to lowercase
+  str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
+           .replace(/\s+/g, '-') // replace spaces with hyphens
+           .replace(/-+/g, '-'); // remove consecutive hyphens
+  console.log(str);
+  return str;
 }
 
 const RemotePost = ({ post }) => {
   // console.log(post);
   const { headline, uri, description_text } = post;
+  // console.log(slugify(headline)); 
   return(
     // <div className={'p-4'}>
     //   <Link href={`${uri}`}><h2 className={"font-bold my-2"}>{headline}</h2></Link>
@@ -42,7 +44,7 @@ const RemotePost = ({ post }) => {
             
     {/* Image */}
     <Link
-      href={`/posts/${uri}`}
+      href={`/posts/${slugify(headline)}`}
       className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
         
 
@@ -53,7 +55,7 @@ const RemotePost = ({ post }) => {
       <div className="flex flex-col justify-center flex-1 w-full h-full">
         <div>
           <Link
-            href={`/posts/${uri}`}
+            href={`/posts/${slugify(headline)}`}
             className="font-black leading-snug tracking-normal text-gray-900 transition duration-300 ease-in-out text-md hover:underline decoration-2 decoration-gray-800">
 
             {headline}
@@ -100,7 +102,7 @@ export default async function Page({ params }){
      
       <Post post={blogPost} postContent={blogPost.articleContent} />
       
-        {/* {remoteData} */}
+        {remoteData}
       <NextArticle post={blogPost} />
     </Layout>
   );
