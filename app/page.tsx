@@ -75,7 +75,6 @@ export default async function Page() {
     const newsletter = getContentPage('content/shared/newsletter.md')
 
     const articles = await getArticles();
-    console.log(articles.data.slice(0,1));
 
     return (
         <Layout>
