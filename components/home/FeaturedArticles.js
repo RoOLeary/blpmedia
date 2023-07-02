@@ -96,7 +96,10 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                     // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
                     className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
-                    Category
+                    {post.articleCategories.map(c => {
+                      let title = c.title ? c.title : 'Sport'; 
+                      return title;
+                    })}
 
                   </Link>
 
