@@ -11,7 +11,7 @@ async function getRemotePost(){
   const remotepost = await fetch(`https://content.api.pressassociation.io/v1/item`, {  
     method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      "Accept": "application/json",
       "apikey": "2wmhpxengxmes4d9xfdk4a79"
     },
   })

@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="sm:flex sm:justify-between sm:items-center">
           {/* Logo */}
           <div className="flex items-center justify-center">
-            <Link href="/" className="hidden lg:block h-9 font-black inter text-2xl">
+            <Link href="/" className="lg:block h-9 font-black inter text-3xl tracking-tight">
               b<span style={{ color: 'red', fontWeight: 'bold'}}>li</span>p
             </Link>
           </div>
