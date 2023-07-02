@@ -11,11 +11,11 @@ export default function Topics({categories}) {
       <div className="max-w-xl px-4 mx-auto sm:max-w-3xl sm:px-6 md:px-8 lg:max-w-screen-2xl">
         
         {/* Section Header */}
-        <h3 className="pb-2.5 text-2xl font-medium text-gray-900 border-b border-gray-300/70 relative before:content-[''] before:left-0 before:w-24 before:h-px before:-bottom-px before:bg-red-600 before:absolute">Trending topics</h3>
+        <h3 className="pb-2.5 text-2xl font-black text-gray-900 border-b border-gray-300/70 relative before:content-[''] before:left-0 before:w-24 before:h-px before:-bottom-px before:bg-red-600 before:absolute">Trending topics</h3>
 
         {/* Topics */}
         <div className="relative mt-8 sm:mt-9">
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 md:gap-6 lg:gap-4 xl:gap-6">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6 md:gap-2 lg:gap-2 xl:gap-2">
             
             {filteredCategories.map((category, index) => (
               <div key={index} className="relative z-0 h-40 overflow-hidden transition duration-300 ease-in-out transform translate-y-0 shadow-md cursor-pointer group hover:-translate-y-1">

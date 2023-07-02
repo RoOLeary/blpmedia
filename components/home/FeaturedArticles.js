@@ -63,7 +63,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
         </article>
 
         {/* Recent Article s*/}
-        <div className="mt-12 sm:mt-16 lg:mt-0 lg:ml-12 lg:w-1/2 xl:ml-16">
+        <div className="mt-12 sm:mt-16 lg:mt-0 lg:ml-12 lg:w-1/2 xl:ml-12">
           <h3 className="pb-2.5 text-2xl font-black text-gray-900 border-b border-gray-300/70 relative before:content-[''] before:left-0 before:w-24 before:h-px before:-bottom-px before:bg-red-600 before:absolute">Recent stories</h3>
           
           {/* Articles Container */}
