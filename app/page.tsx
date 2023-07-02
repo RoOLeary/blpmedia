@@ -80,7 +80,7 @@ export default async function Page() {
     return (
         <Layout>
             {/* <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftdata[0].title}</p></div> */}
-            <FeaturedArticles featuredPosts={articles.data.slice(0,7)} authors={authors} firstSlug={'can-you-hack-productivity-with-pills'} articles={articles.data}/>
+            <FeaturedArticles featuredPosts={articles.data.slice(0,7)} authors={authors} />
             <Topics categories={categories} />
             
             <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">

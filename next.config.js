@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['placedog.net', 'unsplash.com', 'localhost:3000', 'avatars.githubusercontent.com'],
+    domains: ['placedog.net', 'source.unsplash.com',  'image.assets.pressassociation.io', 'content.assets.pressassociation.io', 'localhost:3000', 'avatars.githubusercontent.com'],
   },
 }
 

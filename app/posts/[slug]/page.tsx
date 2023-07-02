@@ -44,13 +44,7 @@ const RemotePost = ({ post }) => {
     <Link
       href={`/posts/${uri}`}
       className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
-        <Image 
-         className="hidden object-cover w-full h-full lg:block" 
-         src="/images/ads/fashion-ad-portrait.png"
-         alt="Fashion ad portrait"
-          width={200} height={200}
-        />
-      
+        
 
     </Link>
     

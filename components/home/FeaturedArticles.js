@@ -2,11 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 
-export default function FeaturedArticles({authors, featuredPosts, firstSlug, articles}) {
-
-  console.log(articles[0]);
-  const { slug, title, articleExcerpt, articleFeaturedImage } = articles[0];
-
+export default function FeaturedArticles({authors, featuredPosts}) {
+  
   return (
     <section className="pt-12 sm:pt-16 lg:pt-20 bg-gray-50">
       <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-2xl lg:flex lg:items-start">
@@ -17,13 +14,13 @@ export default function FeaturedArticles({authors, featuredPosts, firstSlug, art
           {/* Image */}
           
           <Link
-            href={`/posts/${slug}`}
+            href={`/posts/${featuredPosts[0].slug}`}
             className="relative z-10 block overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
 
             <Image 
               className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
-              src={`${articleFeaturedImage}`} 
-              alt={title}
+              src={`${featuredPosts[0].articleImageUrl}`} 
+              alt={featuredPosts[0].title}
               layout="fill"
             />
 
@@ -32,21 +29,21 @@ export default function FeaturedArticles({authors, featuredPosts, firstSlug, art
           {/* Content */}
           <div className="mt-6 md:align-middle">
             <Link
-              href={`/posts/${slug}`}
+              href={`/posts/${featuredPosts[0].slug}`}
               // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
               Category
 
             </Link>
-            <Link href={`/posts/${slug}`} className="block mt-3 group">
+            <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
 
               <h2 className="text-3xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out decoration-gray-800 decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">
-                {title}
+                {featuredPosts[0].title}
               </h2>
               <div>
                 <p className="mt-4 text-base leading-loose text-gray-600">
-                  {articleExcerpt}
+                  {featuredPosts[0].articleExcerpt}
                 </p>
               </div>
 
@@ -67,6 +64,7 @@ export default function FeaturedArticles({authors, featuredPosts, firstSlug, art
           <div className="grid lg:grid-cols-2 xl:grid-cols-1 lg:gap-x-5">
           
             {featuredPosts.slice(1, 7).map((post, index) => (
+              
               <article key={index} className={`py-8 sm:flex xl:items-center lg:flex-col xl:flex-row ${index > 0 ? 'border-t lg:border-t-0 xl:border-t border-gray-300/70' : ''}`}>
                 {/* Image */}
                 <Link
@@ -74,12 +72,12 @@ export default function FeaturedArticles({authors, featuredPosts, firstSlug, art
                   className="order-2 w-full sm:w-2/5 lg:w-full xl:w-2/5 lg:order-1">
 
                   <div className="relative z-10 overflow-hidden bg-gray-100 aspect-w-16 aspect-h-9 group">
-                    {/* <Image 
+                    <Image 
                       className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
-                      src={post.image} 
-                      alt={post.frontmatter.title}
+                      src={`${post.articleImageUrl}`} 
+                      alt={post.title}
                       layout="fill"
-                    /> */}
+                    />
                   </div>
 
                 </Link>
@@ -87,13 +85,14 @@ export default function FeaturedArticles({authors, featuredPosts, firstSlug, art
                 {/* Content */}
                 <div className="order-1 w-full px-2 mt-5 sm:max-w-sm sm:pr-5 sm:pl-0 sm:mt-0 lg:mt-4 xl:mt-0 xl:ml-5 xl:flex-1 lg:order-2">
 
-                  {/* <Link
-                    href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
-                    className="text-xs font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600"> */}
+                  <Link
+                    href={`/posts/${post.slug}`}
+                    // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+                    className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
-                    CATEGOTY
+                    Category
 
-                  {/* </Link> */}
+                  </Link>
 
                   <Link href={`/posts/${post.slug}`}>
 
