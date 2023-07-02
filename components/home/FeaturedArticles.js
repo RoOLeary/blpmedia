@@ -3,6 +3,13 @@ import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 
 export default function FeaturedArticles({authors, featuredPosts}) {
+
+  let cats = featuredPosts[0].articleCategories;
+  cats = cats.map((cat, i) => {
+    return cat.title;
+  })
+
+  
   
   return (
     <section className="pt-12 sm:pt-16 lg:pt-20 bg-gray-50">
@@ -29,11 +36,10 @@ export default function FeaturedArticles({authors, featuredPosts}) {
           {/* Content */}
           <div className="mt-6 md:align-middle">
             <Link
-              href={`/posts/${featuredPosts[0].slug}`}
-              // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+              // href={`/posts/${featuredPosts[0].slug}`}
+              href={`/categories/${cats[0].toLowerCase()}`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
-
-              Category
+              {cats[0]}
 
             </Link>
             <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
