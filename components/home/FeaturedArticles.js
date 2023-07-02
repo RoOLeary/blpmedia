@@ -105,7 +105,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
 
                   <Link href={`/posts/${post.slug}`}>
 
-                    <h3 className="mt-2 text-xl font-medium leading-normal tracking-normal text-gray-900 transition duration-300 ease-in-out hover:underline decoration-2 decoration-gray-800">
+                    <h3 className="mt-2 text-xl font-black leading-normal tracking-normal text-gray-900 transition duration-300 ease-in-out hover:underline decoration-2 decoration-gray-800">
                       {post.title}
                     </h3>
 
