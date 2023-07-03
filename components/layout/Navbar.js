@@ -20,7 +20,7 @@ export default function Navbar() {
   // const { data: session } = useSession()
 
   return (
-    <Disclosure as="header" className="relative bg-transparent border-b border-gray-300/60">
+    <Disclosure as="header" className="relative bg-transparent">
       {({ open }) => (
         <>
           <nav className="flex items-center h-20 px-5 mx-auto md:px-8 darkNav">

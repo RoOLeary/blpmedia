@@ -78,7 +78,7 @@ export default async function Page() {
 
     return (
         <Layout>
-            {/* <div className='mx-auto px-6'><p>This is coming from <strong>Craft</strong> {craftdata[0].title}</p></div> */}
+            <div className='mx-auto w-full bg-red-600 text-white'><p>This is a <strong>Notice</strong></p></div>
             <FeaturedArticles featuredPosts={articles.data.slice(0,7)} authors={authors} />
             <Topics categories={categories} />
             
