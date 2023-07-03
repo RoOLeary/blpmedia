@@ -78,7 +78,7 @@ export default async function Page() {
 
     return (
         <Layout>
-            <div className='mx-auto w-full bg-red-600 text-white'><p className="p-6 ml-2">This is a <strong>Notice</strong></p></div>
+            <div className='flex items-center h-20 sm:px-0 md:px-2 mx-auto bg-red-600 text-white'><p className="p-6 ml-0 sm:p-5 md:ml-1">This is a <strong>Notice</strong></p></div>
             <FeaturedArticles featuredPosts={articles.data.slice(0,7)} authors={authors} />
             <Topics categories={categories} />
             
