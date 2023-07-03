@@ -39,7 +39,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
               // href={`/posts/${featuredPosts[0].slug}`}
               href={`/categories/${cats[0].toLowerCase()}`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
-              {cats[0]}
+              {cats[1]}
 
             </Link>
             <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
@@ -96,10 +96,11 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                     // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
                     className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
-                    {post.articleCategories.map(c => {
-                      let title = c.title ? c.title : ''; 
+                    {post.articleCategories.map(cat => {
+                      
+                      let title = cat.title ? cat.title : ''; 
                       return title;
-                    })}
+                    }).filter((title) => title !== 'Sport')}
 
                   </Link>
 
