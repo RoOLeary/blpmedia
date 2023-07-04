@@ -10,7 +10,7 @@ export default function Layout({ children }) {
             <meta property="og:title" content="Busy Little Pixels | Media" />
             <meta property="og:description" content="Experts in everything goddamnit!" />
        </head>
-        <body>
+        <body className={'reset'}>
             {children}
         </body>
       </html>

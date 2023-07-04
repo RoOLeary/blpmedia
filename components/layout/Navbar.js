@@ -21,10 +21,10 @@ export default function Navbar() {
 
   return (
     <>
-    <Disclosure as="header" className="relative bg-transparent">
+    <Disclosure as="header" className="bg-transparent">
       {({ open }) => (
         <>
-          <nav className="flex items-center h-20 px-5 mx-auto md:px-8 darkNav">
+          <nav className="flex items-center h-20 p-5 mx-auto md:px-8 darkNav">
             
             {/* Main navbar for large screens */}
             <div className="flex items-center justify-between w-full">
