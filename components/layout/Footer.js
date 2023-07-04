@@ -52,7 +52,6 @@ export default function Footer() {
                 className="px-5 py-2 text-base text-white transition duration-300 ease-in-out hover:text-red-700">
 
                 {item.name}
-
               </Link>)
             ))}
           </nav>
