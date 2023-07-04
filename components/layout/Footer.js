@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="pt-10 mt-10 border-t md:flex md:justify-between md:items-center border-t-gray-300/70">
           
           {/* Footer Links */}
-          <nav className="flex flex-wrap items-center justify-center -mx-5 -my-2 md:justify-start" aria-label="Footer">
+          <nav className="hidden md:flex flex-wrap items-center justify-center -mx-5 -my-2 md:justify-start" aria-label="Footer">
             {MenuLinks.footer.map((item) => (
               (<Link
                 key={item.name}
