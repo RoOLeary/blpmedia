@@ -37,7 +37,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
           <div className="mt-6 md:align-middle">
             <Link
               // href={`/posts/${featuredPosts[0].slug}`}
-              href={`/categories/${cats[0].toLowerCase()}`}
+              href={`/categories/${cats[1].toLowerCase()}`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
               {cats[1]}
 

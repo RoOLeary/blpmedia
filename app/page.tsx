@@ -20,6 +20,7 @@ import { getContentPage } from '../libs/getContentPage'
 
 
 async function getFeatured() {
+    
     return getFeaturedPosts();
 }
 
@@ -101,7 +102,7 @@ export default async function Page() {
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
                     <div className="col-span-2">
-                        <SingleColFeed posts={archivedPosts.slice(6,13)} authors={authors} />
+                        <SingleColFeed posts={articles.data.slice(7,15)} authors={authors} />
                     </div>
 
                     {/* Sidebar */}

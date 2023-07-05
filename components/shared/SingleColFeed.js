@@ -4,6 +4,15 @@ import { formatDate } from '../../utils/formatDate'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
 export default function SingleColFeed({posts, authors}) {
+
+  console.log(posts);
+
+  // let cats = posts[0].articleCategories;
+  // cats = cats.map((cat, i) => {
+  //   return cat.title;
+  // })
+
+
   return <>   
     {posts.map((post, index) => (
       <article className="md:gap-8 md:grid md:grid-cols-4" key={post.slug}>
@@ -16,8 +25,8 @@ export default function SingleColFeed({posts, authors}) {
 
             <Image 
               className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
-              src={post.frontmatter.image} 
-              alt={post.frontmatter.title}
+              src={`${post.articleImageUrl}`} 
+              alt={post.title}
               layout="fill"
             />
 
@@ -29,10 +38,10 @@ export default function SingleColFeed({posts, authors}) {
           <div className={`box-border flex flex-col justify-between flex-1 w-full px-6 md:px-0 ${index != posts.length -1 ? 'pb-8 mb-8 border-b-2 border-gray-100' : ''}`}>
             <div>
               <Link
-                href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+                href={`/ass`}
                 className="relative z-10 font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out text-tiny transition-color hover:text-red-600">
 
-                {post.frontmatter.category}
+                  Cat
 
               </Link>
               
@@ -40,12 +49,12 @@ export default function SingleColFeed({posts, authors}) {
                 <Link href={`/posts/${post.slug}`}>
 
                   <span className="absolute inset-0" aria-hidden="true" />
-                  {post.frontmatter.title}
+                  {post.title}
 
                 </Link>
               </h3>
               <p className="block mt-3.5 text-base leading-relaxed text-gray-500">
-                {post.frontmatter.description}
+                {post.description}
               </p>
             </div>
 
@@ -53,7 +62,7 @@ export default function SingleColFeed({posts, authors}) {
             <footer className="flex items-center mt-5 sm:mt-7">
               
               {/* Author Image */}
-              <Link
+              {/* <Link
                 href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
                 className="relative mr-3 bg-gray-50 w-7 h-7 lg:w-8 lg:h-8">
 
@@ -69,9 +78,9 @@ export default function SingleColFeed({posts, authors}) {
                   )
                 )}
 
-              </Link>
+              </Link> */}
 
-              <div className="text-sm lg:text-[15px] flex items-center">
+              {/* <div className="text-sm lg:text-[15px] flex items-center">
                 <span className="hidden text-gray-500 sm:inline-block">By&nbsp;</span>
                 <Link
                   href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
@@ -87,7 +96,7 @@ export default function SingleColFeed({posts, authors}) {
                   <ClockIcon className="w-[18px] h-[18px] ml-2.5 text-gray-400" />
                   <span className="ml-1 text-gray-500">{post.frontmatter.time_to_read_in_minutes} min read</span>
                 </span>
-              </div>
+              </div> */}
             </footer>
 
           </div>
