@@ -112,7 +112,6 @@ export default async function Page() {
                     </div>
                 </div>
             </section>
-
             <Newsletter newsletter={newsletter} />        
         </Layout>
     )
