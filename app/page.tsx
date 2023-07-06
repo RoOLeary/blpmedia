@@ -57,7 +57,15 @@ async function getData(){
 }
 
 async function getArticles(){
-    const res = await fetch('https://craft-ezhk.frb.io/api/articles.json', { next: { revalidate: 30 } });
+    const res = await fetch('https://craft-ezhk.frb.io/api/articles.json&page=1', { next: { revalidate: 30 } });
+    if (!res.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    return res.json();
+}
+
+async function getFeedArticles(){
+    const res = await fetch('https://craft-ezhk.frb.io/api/articles.json&page=2', { next: { revalidate: 30 } });
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
@@ -76,6 +84,7 @@ export default async function Page() {
     const newsletter = getContentPage('content/shared/newsletter.md')
 
     const articles = await getArticles();
+    const feedArticles = await getFeedArticles();
 
     return (
         <Layout>
@@ -84,7 +93,7 @@ export default async function Page() {
             
             <section className="relative max-w-screen-xl py-12 mx-auto md:py-16 lg:py-20 lg:px-8">
                 <div className="w-full grid lg:gap-8 lg:grid-cols-3">
-                    <TwoColFeed posts={archivedPosts.slice(0,6)} authors={authors} />
+                    <TwoColFeed posts={feedArticles.data} authors={authors} />
                     
                     {/* Sidebar */}
                     <div className="w-full max-w-xl px-4 mx-auto mt-12 space-y-8 sm:mt-16 lg:mt-0 md:max-w-3xl sm:px-6 md:px-8 lg:px-0 lg:col-span-1 lg:max-w-none">
@@ -102,7 +111,7 @@ export default async function Page() {
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
                     <div className="col-span-2">
-                        <SingleColFeed posts={articles.data.slice(7,15)} authors={authors} />
+                        <SingleColFeed posts={articles.data.slice(5,10)} authors={authors} />
                     </div>
                     {/* Sidebar */}
                     <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
