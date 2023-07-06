@@ -106,7 +106,6 @@ export default async function Page() {
             </section>
 
             <BannerArticle post={articles.data[articles.data.length - 1]} authors={authors} />
-
             {/* Feed 2 */}
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
