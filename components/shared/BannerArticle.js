@@ -13,8 +13,8 @@ export default function BannerArticle({post, authors}) {
         <div className="aspect-w-5 aspect-h-2 bg-gray-50">
           <Image 
             className="object-cover object-center" 
-            src={post.frontmatter.image} 
-            alt={post.frontmatter.title}
+            src={post.articleImageUrl} 
+            alt={post.title}
             layout="fill"
           />
         </div>
@@ -26,13 +26,13 @@ export default function BannerArticle({post, authors}) {
         <div className="flex items-center justify-center px-5 py-8 shadow-md sm:shadow-lg sm:p-10 md:p-12 bg-white/90 backdrop-blur-md lg:p-14 rounded-2xl ">
           <div className="flex flex-col items-center text-center">
             <Link
-              href={`/categories/${post.frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
+              href={`/categories/`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
-              {post.frontmatter.category}
+              Sport
             </Link>
             <Link href={`/posts/${post.slug}`} className="block mt-3 group">
 
-              <h2 className="text-2xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out sm:text-3xl decoration-gray-800 decoration-2 sm:decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">{post.frontmatter.title}</h2>
+              <h2 className="text-2xl font-medium tracking-normal text-gray-900 transition duration-300 ease-in-out sm:text-3xl decoration-gray-800 decoration-2 sm:decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">{post.title}</h2>
 
             </Link>
             
@@ -40,17 +40,17 @@ export default function BannerArticle({post, authors}) {
             <footer className="flex items-center justify-between mt-5 sm:mt-7">
               <div className="flex items-center justify-center">
                 
-                <Link
-                  href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
+                {/* <Link
+                  href={`/authors/${post.author.replace(/ /g, '-').toLowerCase()}`}
                   className="relative mr-3 rounded-lg bg-gray-50 w-7 h-7 lg:w-8 lg:h-8">
 
                   {authors.map((author) =>
-                    post.frontmatter.author === author.frontmatter.name && (
+                    post.author === author.name && (
                       <Image
-                        key={author.frontmatter.name}
+                        key={author.name}
                         className="flex-shrink-0 object-cover object-center rounded-lg" 
-                        src={author.frontmatter.image} 
-                        alt={author.frontmatter.name}
+                        src={author.image} 
+                        alt={author.name}
                         layout="fill"
                       />
                     )
@@ -72,7 +72,7 @@ export default function BannerArticle({post, authors}) {
                     <ClockIcon className="w-[18px] h-[18px] ml-2.5 text-gray-400" />
                     <span className="ml-1 text-gray-500">{post.frontmatter.time_to_read_in_minutes} min read</span>
                   </span>
-                </div>
+                </div> */}
               </div>
             </footer>
             
