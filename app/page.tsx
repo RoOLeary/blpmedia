@@ -104,7 +104,6 @@ export default async function Page() {
                     <div className="col-span-2">
                         <SingleColFeed posts={articles.data.slice(7,15)} authors={authors} />
                     </div>
-
                     {/* Sidebar */}
                     <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
                         <SidebarAd />
