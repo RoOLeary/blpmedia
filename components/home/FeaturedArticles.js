@@ -1,6 +1,23 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
+import tw from 'tailwind-styled-components';
+
+const Section = tw.section`
+  pt-12 sm:pt-16 lg:pt-20 bg-gray-50
+`;
+
+const Container = tw.div`
+  max-w-2xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-2xl lg:flex lg:items-start
+`;
+
+const FirstArticle = tw.article`
+  relative lg:top-8 lg:w-1/2 lg:stick
+`;
+
+const RecentContainer = tw.div`
+  mt-12 sm:mt-16 lg:mt-0 lg:ml-12 lg:w-1/2 xl:ml-12
+`;
 
 export default function FeaturedArticles({authors, featuredPosts}) {
 
@@ -12,11 +29,11 @@ export default function FeaturedArticles({authors, featuredPosts}) {
   
   
   return (
-    <section className="pt-12 sm:pt-16 lg:pt-20 bg-gray-50">
-      <div className="max-w-2xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-screen-2xl lg:flex lg:items-start">
+    <Section>
+      <Container>
         
         {/* 1st Featured Article */}
-        <article className="relative lg:top-8 lg:w-1/2 lg:sticky">
+        <FirstArticle>
          
           {/* Image */}
           
@@ -60,10 +77,10 @@ export default function FeaturedArticles({authors, featuredPosts}) {
             
           </div>
 
-        </article>
+        </FirstArticle>
 
         {/* Recent Article s*/}
-        <div className="mt-12 sm:mt-16 lg:mt-0 lg:ml-12 lg:w-1/2 xl:ml-12">
+        <RecentContainer>
           <h3 className="pb-2.5 text-2xl font-black text-gray-900 border-b border-gray-300/70 relative before:content-[''] before:left-0 before:w-24 before:h-px before:-bottom-px before:bg-red-600 before:absolute">Recent stories</h3>
           
           {/* Articles Container */}
@@ -158,9 +175,9 @@ export default function FeaturedArticles({authors, featuredPosts}) {
 
           </div>
 
-        </div>
+        </RecentContainer>
 
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
