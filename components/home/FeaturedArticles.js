@@ -31,7 +31,6 @@ export default function FeaturedArticles({authors, featuredPosts}) {
   return (
     <Section>
       <Container>
-        
         {/* 1st Featured Article */}
         <FirstArticle>
          
