@@ -1,3 +1,5 @@
+"use client"; 
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
@@ -20,7 +22,7 @@ const RecentContainer = tw.div`
 `;
 
 export default function FeaturedArticles({authors, featuredPosts}) {
-
+  console.log(featuredPosts[0]);
   let cats = featuredPosts[0].articleCategories;
   // console.log(cats[1].slug);
   cats = cats.map((cat, i) => {
@@ -86,7 +88,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
           {/* Articles Container */}
           <div className="grid lg:grid-cols-2 xl:grid-cols-1 lg:gap-x-5">
           
-            {featuredPosts.slice(1, 7).map((post, index) => (
+            {featuredPosts.map((post, index) => (
               
               <article key={index} className={`py-8 sm:flex xl:items-center lg:flex-col xl:flex-row ${index > 0 ? 'border-t lg:border-t-0 xl:border-t border-gray-300/70' : ''}`}>
                 {/* Image */}
@@ -99,7 +101,8 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                       className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
                       src={`${post.articleImageUrl}`} 
                       alt={post.title}
-                      layout="fill"
+                      width={230}
+                      height={230}
                     />
                   </div>
 
@@ -109,12 +112,11 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                 <div className="order-1 w-full px-2 mt-5 sm:max-w-sm sm:pr-5 sm:pl-0 sm:mt-0 lg:mt-4 xl:mt-0 xl:ml-5 xl:flex-1 lg:order-2">
 
                   <Link
-                    href={`/categories/${post.articleCategories[1] ? post.articleCategories[1].slug : 'General'}`}
+                    href={`/categories/${post.articleCategories[1] ? post.articleCategories[1].slug : post.title}`}
                     // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
                     className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
                     {post.articleCategories.map(cat => {
-                      
                       let title = cat.title ? cat.title : ''; 
                       return title;
                     }).filter((title) => title !== 'Sport')}
@@ -171,7 +173,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                 </div>
 
               </article>
-            ))}
+            )).slice(1, 7)}
 
           </div>
 
