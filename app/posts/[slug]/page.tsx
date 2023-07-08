@@ -105,7 +105,7 @@ export default async function Page({ params }){
      
       <Post post={blogPost} postContent={blogPost.articleContent} />
       
-        {remoteData}
+        {/* {remoteData} */}
       <NextArticle post={blogPost} />
     </Layout>
   );
