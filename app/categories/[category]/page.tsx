@@ -34,17 +34,6 @@ export default async function Page({ params }) {
         <Layout>
             <CategoryHeader category={params.category} />
             
-            {/* Feed with Sidebar */}
-            <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
-                <div className="w-full lg:grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
-                    <div className="col-span-2">
-                        STUFF HERE
-                    </div>
-
-                </div>
-            </section>
-           
-            <Newsletter newsletter={newsletter} />
         </Layout>
     );
 }
