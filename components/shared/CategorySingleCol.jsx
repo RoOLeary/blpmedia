@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { formatDate } from '../../utils/formatDate'
-import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
-export default function SingleColFeed({posts}) {
-  
+
+export default function CategorySingleCol({posts}) {
+  console.log({ posts });
   return <>   
     {posts.map((post, index) => (
       <article className="md:gap-8 md:grid md:grid-cols-4" key={post.slug}>
@@ -19,8 +18,8 @@ export default function SingleColFeed({posts}) {
               className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
               src={post.articleImageUrl} 
               alt={post.title}
-              width={250}
-              height={250}
+              width={150}
+              height={150}
             />
 
           </Link>
