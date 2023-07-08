@@ -1,12 +1,12 @@
 export default {
   "mainMenu": [
     {
-      "name": "Technology",
-      "link": "/categories/technology"
+      "name": "Football",
+      "link": "/categories/football"
     },
     {
-      "name": "Startups",
-      "link": "/categories/startups"
+      "name": "Formula One",
+      "link": "/categories/formula-one"
     },
     {
       "name": "Science",
