@@ -112,14 +112,11 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                 <div className="order-1 w-full px-2 mt-5 sm:max-w-sm sm:pr-5 sm:pl-0 sm:mt-0 lg:mt-4 xl:mt-0 xl:ml-5 xl:flex-1 lg:order-2">
 
                   <Link
-                    href={`/categories/#`}
+                    href={`/categories/${post.articleCategories[1] ? post.articleCategories[1].slug : '#'}`}
                     // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
                     className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
-                    {post.articleCategories.map(cat => {
-                      let title = cat.title ? cat.title : ''; 
-                      return title;
-                    }).filter((title) => title !== 'Sport')}
+                    {post.articleCategories[1].title}
 
                   </Link>
 

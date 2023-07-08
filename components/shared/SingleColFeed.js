@@ -4,7 +4,7 @@ import { formatDate } from '../../utils/formatDate'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
 export default function SingleColFeed({posts}) {
-
+  console.log(posts);
   return <>   
     {posts.map((post, index) => (
       <article className="md:gap-8 md:grid md:grid-cols-4" key={post.slug}>
@@ -30,14 +30,15 @@ export default function SingleColFeed({posts}) {
         <div className="relative flex flex-col flex-wrap mt-6 md:mt-0 md:col-span-3">
           <div className={`box-border flex flex-col justify-between flex-1 w-full px-6 md:px-0 ${index != posts.length -1 ? 'pb-8 mb-8 border-b-2 border-gray-100' : ''}`}>
             <div>
-              <Link
-                href={`/ass`}
+              
+              {/* <Link
+                href={`/categories/${post.articleCategories.slug}`}
                 className="relative z-10 font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out text-tiny transition-color hover:text-red-600">
 
                   Cat
 
               </Link>
-              
+               */}
               <h3 className="mt-2.5 text-xl font-medium leading-tight text-gray-900 transition duration-300 ease-in-out lg:text-xl sm:text-2xl xl:text-2xl decoration-gray-800 decoration-2 hover:underline">
                 <Link href={`/posts/${post.slug}`}>
 
