@@ -57,7 +57,7 @@ async function getData(){
 }
 
 async function getArticles(){
-    const res = await fetch('https://craft-ezhk.frb.io/api/articles.json&page=1', { next: { revalidate: 30 } });
+    const res = await fetch('https://craft-ezhk.frb.io/api/articles.json', { next: { revalidate: 30 } });
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
