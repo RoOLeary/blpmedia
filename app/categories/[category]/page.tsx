@@ -26,12 +26,10 @@ export default async function Page({ params }) {
     const category = params.category
     const techPosts = await getCats(category); 
     const postsinCat = techPosts.data[0].entries;
-    const authors = await getAuthors();
     const newsletter = await getContentPage('content/shared/newsletter.md');
-    const popularPosts = await getPopularPostsInCategory(category);
     const posts = postsinCat.map((post) => post);
 
-    // console.log(techPosts.data[0].entries[1]);
+    console.log(posts);
     return (
         <Layout>
             <CategoryHeader category={params.category} />
@@ -40,7 +38,7 @@ export default async function Page({ params }) {
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full lg:grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
                     <div className="col-span-2">
-                        <SingleColFeed posts={posts.slice(0,6)} />
+                        STUFF HERE
                     </div>
 
                 </div>
