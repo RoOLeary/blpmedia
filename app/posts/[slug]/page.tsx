@@ -92,8 +92,11 @@ export default async function Page({ params }){
   let blogPost = await getBlogPost(params.slug);
 
   let remoteposts = await getRemotePost(); 
+
+  // sconsole.log(blogPost.title);
   const remoteData = Object.entries(remoteposts).map((post, i) => {
-    const output = Object.entries(post[1]).map((p, i) => <RemotePost key={i} post={p[1]} />).slice(1,19) //title={p[1].headline} content={p[1].body_text} excerpt={p[1].description_text} />)
+    // console.log(post);
+    const output = Object.entries(post[1]).map((p, i) => <RemotePost key={i} post={p[1]} />).slice(1,18) //title={p[1].headline} content={p[1].body_text} excerpt={p[1].description_text} />)
     return output;
   });
 
@@ -102,7 +105,7 @@ export default async function Page({ params }){
      
       <Post post={blogPost} postContent={blogPost.articleContent} />
       
-        {/* {remoteData} */}
+        {remoteData}
       <NextArticle post={blogPost} />
     </Layout>
   );
