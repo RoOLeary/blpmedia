@@ -40,7 +40,7 @@ export default async function Page({ params }) {
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full lg:grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
                     <div className="col-span-2">
-                        <SingleColFeed posts={techPosts.data[0].entries.slice(0,6)} />
+                        <SingleColFeed posts={posts.slice(0,6)} />
                     </div>
 
                 </div>
