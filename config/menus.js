@@ -9,12 +9,12 @@ export default {
       "link": "/categories/formula-one"
     },
     {
-      "name": "Science",
-      "link": "/categories/science"
+      "name": "Tennis",
+      "link": "/categories/tennis"
     },
     {
-      "name": "Culture",
-      "link": "/categories/culture"
+      "name": "Golf",
+      "link": "/categories/golf"
     },
     {
       "name": "Pages",
