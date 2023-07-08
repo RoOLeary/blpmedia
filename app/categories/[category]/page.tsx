@@ -43,12 +43,6 @@ export default async function Page({ params }) {
                         <SingleColFeed posts={techPosts.data[0].entries.slice(0,6)} />
                     </div>
 
-                    {/* Sidebar */}
-                    <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
-                        <SidebarArticles posts={popularPosts} header={`Most read in ${category.toUpperCase()}`} />
-                        <SidebarSocialLinks />
-                        <SidebarAd />
-                    </div>
                 </div>
             </section>
            
