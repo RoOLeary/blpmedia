@@ -51,21 +51,7 @@ export default async function Page({ params }) {
                     </div>
                 </div>
             </section>
-            <BannerArticle post={techPosts.data[0].entries[5]} authors={authors} />
-            {posts.length >= 8 && (
-                <>
-                <section className="relative max-w-xl px-5 py-12 mx-auto lg:max-w-4xl sm:py-16 lg:py-24 md:max-w-3xl lg:px-8">
-                    
-                    {/* Articles */}
-                    <div className="pb-8 mb-6 border-b-2 border-gray-100 sm:pb-10 sm:mb-10">
-                    <SingleColFeed posts={techPosts.data[0].entries.slice(7,13)} authors={authors} />
-                    </div>
-
-                    <Pagination />
-                    
-                </section>
-                </>
-            )}
+           
             <Newsletter newsletter={newsletter} />
         </Layout>
     );
