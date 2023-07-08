@@ -6,19 +6,19 @@ import Post from '../../../components/posts/Post';
 import NextArticle from '../../../components/posts/NextArticle';
 
 
-async function getRemotePost(){
+// async function getRemotePost(){
 
-  const remotepost = await fetch(`https://content.api.pressassociation.io/v1/item`, {  
-    method: 'GET',
-    headers: {
-      "Accept": "application/json",
-      "apikey": "2wmhpxengxmes4d9xfdk4a79"
-    },
-  })
-  .then(response => response.json())
+//   const remotepost = await fetch(`https://content.api.pressassociation.io/v1/item`, {  
+//     method: 'GET',
+//     headers: {
+//       "Accept": "application/json",
+//       "apikey": "2wmhpxengxmes4d9xfdk4a79"
+//     },
+//   })
+//   .then(response => response.json())
 
-  return remotepost;
-}
+//   return remotepost;
+// }
 
 const slugify = (str) => {
   
@@ -88,17 +88,20 @@ async function getBlogPost(slug){
   return blogPost.json();
 }
 
+async function getNextPost(slug){
+  const nextPost = await fetch(`https://craft-ezhk.frb.io/api/articles.json?elements_per_page=1`, { next: { revalidate: 10 } });
+  if (!nextPost.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  return nextPost.json();
+}
+
 export default async function Page({ params }){
   let blogPost = await getBlogPost(params.slug);
+  console.log(blogPost);
+  let nextPost = await getNextPost(params.slug); 
+  console.log(nextPost);
 
-  let remoteposts = await getRemotePost(); 
-
-  // sconsole.log(blogPost.title);
-  const remoteData = Object.entries(remoteposts).map((post, i) => {
-    // console.log(post);
-    const output = Object.entries(post[1]).map((p, i) => <RemotePost key={i} post={p[1]} />).slice(1,18) //title={p[1].headline} content={p[1].body_text} excerpt={p[1].description_text} />)
-    return output;
-  });
 
   return (
     <Layout>
@@ -106,7 +109,7 @@ export default async function Page({ params }){
       <Post post={blogPost} postContent={blogPost.articleContent} />
       
         {/* {remoteData} */}
-      <NextArticle post={blogPost} />
+      {/* <NextArticle post={blogPost} /> */}
     </Layout>
   );
 }
