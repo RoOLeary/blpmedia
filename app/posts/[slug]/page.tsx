@@ -27,7 +27,7 @@ const slugify = (str) => {
   str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
            .replace(/\s+/g, '-') // replace spaces with hyphens
            .replace(/-+/g, '-'); // remove consecutive hyphens
-  console.log(str);
+  // console.log(str);
   return str;
 }
 
@@ -89,7 +89,7 @@ async function getBlogPost(slug){
 }
 
 async function getNextPost(slug){
-  const nextPost = await fetch(`https://craft-ezhk.frb.io/api/articles.json?elements_per_page=1`, { next: { revalidate: 10 } });
+  const nextPost = await fetch(`https://craft-ezhk.frb.io/api/articles.json?elementsPerPage=1`, { next: { revalidate: 10 } });
   if (!nextPost.ok) {
     throw new Error('Failed to fetch data');
   }
@@ -98,9 +98,9 @@ async function getNextPost(slug){
 
 export default async function Page({ params }){
   let blogPost = await getBlogPost(params.slug);
-  console.log(blogPost);
+  // console.log(blogPost);
   let nextPost = await getNextPost(params.slug); 
-  console.log(nextPost);
+  // console.log(nextPost);
 
 
   return (

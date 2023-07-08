@@ -7,7 +7,7 @@ import { useSession, signIn } from "next-auth/react";
 export default function Account() {
     const { data: session, status, loading } = useSession()
 
-    console.log(loading);
+    // console.log(loading);
 
     const opts = {
         height: "560",

@@ -21,7 +21,8 @@ export default function SidebarArticles({header, posts}) {
                 className="object-cover object-center w-full h-full transition duration-300 ease-in-out group-hover:scale-110" 
                 src={post.frontmatter.image} 
                 alt={post.frontmatter.title}
-                layout="fill"
+                width={200}
+                height={200}
               />
 
             </Link>

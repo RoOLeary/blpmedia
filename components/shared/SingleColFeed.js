@@ -5,14 +5,6 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
 export default function SingleColFeed({posts, authors}) {
 
-  console.log(posts);
-
-  // let cats = posts[0].articleCategories;
-  // cats = cats.map((cat, i) => {
-  //   return cat.title;
-  // })
-
-
   return <>   
     {posts.map((post, index) => (
       <article className="md:gap-8 md:grid md:grid-cols-4" key={post.slug}>
@@ -25,9 +17,10 @@ export default function SingleColFeed({posts, authors}) {
 
             <Image 
               className="object-cover object-center transition duration-300 ease-in-out group-hover:scale-110" 
-              src={`${post.articleImageUrl}`} 
+              src={post.articleImageUrl} 
               alt={post.title}
-              layout="fill"
+              width={250}
+              height={250}
             />
 
           </Link>

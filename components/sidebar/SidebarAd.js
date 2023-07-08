@@ -10,7 +10,8 @@ export default function SidebarAd() {
           className="hidden object-cover w-full h-full lg:block" 
           src="/images/ads/fashion-ad-portrait.png"
           alt="Fashion ad portrait"
-          layout="fill"
+          width={450}
+          height={280}
         />
       </a>
 
@@ -23,7 +24,6 @@ export default function SidebarAd() {
           alt="Fashion landscape ad"
           width={960}
           height={540}
-          layout="responsive"
         />
       </a>
     </div>

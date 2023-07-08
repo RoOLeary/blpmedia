@@ -15,7 +15,8 @@ export default function BannerArticle({post, authors}) {
             className="object-cover object-center" 
             src={post.articleImageUrl} 
             alt={post.title}
-            layout="fill"
+            width={280}
+            height={280}
           />
         </div>
 
