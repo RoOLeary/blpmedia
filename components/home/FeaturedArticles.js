@@ -55,7 +55,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
               // href={`/posts/${featuredPosts[0].slug}`}
               href={`/categories/`}
               className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
-              Category
+              {cats[1]}
 
             </Link>
             <Link href={`/posts/${featuredPosts[0].slug}`} className="block mt-3 group">
