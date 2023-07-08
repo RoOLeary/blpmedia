@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
-export default function SingleColFeed({posts, authors}) {
+export default function SingleColFeed({posts}) {
 
   return <>   
     {posts.map((post, index) => (

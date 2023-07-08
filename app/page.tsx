@@ -110,7 +110,7 @@ export default async function Page() {
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
                     <div className="col-span-2">
-                        <SingleColFeed posts={articles.data.slice(16,20)} authors={authors} />
+                        <SingleColFeed posts={articles.data.slice(16,20)} />
                     </div>
                     {/* Sidebar */}
                     <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
