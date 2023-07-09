@@ -8,11 +8,11 @@ import { Disclosure, Menu } from '@headlessui/react'
 import { useSession, signIn, signOut } from "next-auth/react";
 
 
-export default async function Navbar() {
-  const router = usePathname();
-  const { data: session } = useSession()
+export default function Navbar() {
+  const pathname = usePathname();
+  const { data: session } = useSession();
 
-  console.log(session ? session.user.name : 'no session')
+  console.log(session ? session.user : 'nope')
 
   return (
     <>
@@ -53,7 +53,7 @@ export default async function Navbar() {
                         {({ open }) => (
                           <>
                             {/* <Menu.Button
-                              className={`flex items-center px-3 py-1 font-medium text-md group ${open ? 'text-red-700' : 'text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                              classNafeme={`flex items-center px-3 py-1 font-medium text-md group ${open ? 'text-red-700' : 'text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
                             >
                               <span>Pages</span>
                               <ChevronDownIcon
@@ -68,7 +68,7 @@ export default async function Navbar() {
                                 <Menu.Item key={i}>
                                   <Link
                                     href={subLink.link}
-                                    className={`block rounded-lg py-3.5 px-5 font-bold ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}>
+                                    className={`block rounded-lg py-3.5 px-5 font-bold ${pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}>
 
                                     {subLink.name}
 
@@ -85,7 +85,7 @@ export default async function Navbar() {
                       (<Link
                         key={index}
                         href={link.link}
-                        className={`px-3 py-1 font-bold text-md ${router.asPath == link.link ? 'active text-red-700' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
+                        className={`px-3 py-1 font-bold text-md ${pathname == link.link ? 'active text-red-700' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
 
                         {link.name}
 
@@ -131,7 +131,7 @@ export default async function Navbar() {
                     (<Link
                       href={link.link}
                       key={i}
-                      className={`block px-4 py-3 font-bold rounded-lg ${router.pathname == link.link ? 'text-white text-red-700' : 'text-gray-800 hover:text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                      className={`block px-4 py-3 font-bold rounded-lg ${pathname == link.link ? 'text-white text-red-700' : 'text-gray-800 hover:text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
                       aria-current="page">
 
                       {link.name}
@@ -151,7 +151,7 @@ export default async function Navbar() {
                         {link.submenu.map((subLink, j) => (
                           <Link href={subLink.link} key={j}>
                             <a 
-                              className={`block px-4 py-2 font-medium rounded-lg ${router.pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-red-600 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                              className={`block px-4 py-2 font-medium rounded-lg ${pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-red-600 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
                               aria-current="page"
                             >
                               {subLink.name}

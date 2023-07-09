@@ -5,7 +5,7 @@ import { AuthOptions } from '../../utils/AuthOptions';
 export default async function Page() {
 
     const session = await getServerSession(AuthOptions)
-    console.log('account page:', session.user.name);
+    console.log(session ? session.user : 'nada');
 
     return (
       <Layout>
