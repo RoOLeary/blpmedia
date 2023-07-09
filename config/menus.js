@@ -1,20 +1,16 @@
 export default {
   "mainMenu": [
     {
-      "name": "Football",
-      "link": "/categories/football"
+      "name": "About",
+      "link": "/about"
     },
     {
-      "name": "Formula One",
+      "name": "Advertise",
       "link": "/categories/formula-one"
     },
     {
-      "name": "Tennis",
+      "name": "Contact",
       "link": "/categories/tennis"
-    },
-    {
-      "name": "Golf",
-      "link": "/categories/golf"
     },
     {
       "name": "Pages",
