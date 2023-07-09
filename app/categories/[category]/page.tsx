@@ -7,6 +7,11 @@ import BannerArticle from './../../../components/shared/BannerArticle'
 import Pagination from './../../../components/shared/Pagination'
 import { getPopularPosts } from '../../../libs/getPosts';
 
+
+async function getAllPopularPosts() {
+  return getPopularPosts();
+}
+
 async function getCats(slug){
     const cats = await fetch(`https://craft-ezhk.frb.io/api/category/${slug}.json`);
     if (!cats.ok) {
@@ -20,7 +25,7 @@ export default async function Page({ params }) {
     const category = params.category
     const techPosts = await getCats(category); 
     const postsinCat = techPosts.data[0].entries;
-    const popularPosts = await getPopularPosts();
+    const popularPosts = await getAllPopularPosts();
     // const authors = await getAuthors(); 
     
     return (
