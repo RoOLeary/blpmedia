@@ -40,50 +40,35 @@ export default function CategorySingleCol({posts}) {
                 </Link>
               </h3>
               <p className="block mt-3.5 text-base leading-relaxed text-gray-500">
-                {post.description}
+                {post.articleExcerpt}
               </p>
             </div>
 
             {/* Article Footer Info */}
             <footer className="flex items-center mt-5 sm:mt-7">
-              
-              {/* Author Image */}
-              {/* <Link
-                href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
-                className="relative mr-3 bg-gray-50 w-7 h-7 lg:w-8 lg:h-8">
 
-                {authors.map((author) =>
-                  post.frontmatter.author === author.frontmatter.name && (
-                    <Image
-                      key={author.frontmatter.image}
-                      className="flex-shrink-0 object-cover object-center" 
-                      src={author.frontmatter.image} 
-                      alt={author.frontmatter.name}
-                      layout="fill"
-                    />
-                  )
-                )}
-
-              </Link> */}
-
-              {/* <div className="text-sm lg:text-[15px] flex items-center">
-                <span className="hidden text-gray-500 sm:inline-block">By&nbsp;</span>
-                <Link
-                  href={`/authors/${post.frontmatter.author.replace(/ /g, '-').toLowerCase()}`}
-                  className="relative font-medium text-gray-700 hover:underline">
-
-                  {post.frontmatter.author}
-
-                </Link>
-                
-                <CalendarIcon className="w-[18px] h-[18px] ml-2.5 text-gray-400" />
-                <span className="ml-1 text-gray-500">{formatDate(post.frontmatter.date)}</span>
-                <span className="items-center hidden sm:flex">
-                  <ClockIcon className="w-[18px] h-[18px] ml-2.5 text-gray-400" />
-                  <span className="ml-1 text-gray-500">{post.frontmatter.time_to_read_in_minutes} min read</span>
-                </span>
-              </div> */}
-            </footer>
+                  <Link href="Linkuthor.html" className="relative mr-3 rounded-lg bg-gray-50">
+                    <Image className="flex-shrink-0 object-cover object-center transition duration-300 ease-in-out rounded opacity-0 w-7 h-7 lg:w-8 lg:h-8 lazy entered loaded" alt="Author 01" width={150} height={150} src={"/images/authors/veronica-mars.jpeg"}/>
+                  </Link>
+                  
+                  <div className="text-sm lg:text-[15px] flex items-center">
+                    <span className="hidden text-gray-500 sm:inline-block">By&nbsp;</span>
+                    <a className="relative font-medium text-gray-700 hover:underline" href="author.html">Syndi Cated</a>
+                    
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-[18px] h-[18px] ml-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                      <span className="ml-1 text-gray-500">Nov 2, 2020</span>
+  
+                      <span className="items-center hidden sm:flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-[18px] h-[18px] ml-2.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span className="ml-1 text-gray-500">15 min read</span>
+                      </span>
+                    
+                  </div>
+                </footer>
 
           </div>
         </div>
