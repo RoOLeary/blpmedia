@@ -1,5 +1,4 @@
 export default function Page() {
-   
     return (
         <section className="bg-gray-50">
           <div className="max-w-7xl min-h-screen px-6 py-12 mx-auto flex flex-col sm:pt-16">
