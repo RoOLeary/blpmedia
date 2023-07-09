@@ -172,7 +172,14 @@ export default function Navbar() {
       )}
     </Disclosure>
     <div className='flex items-center h-20 sm:px-0 md:px-2 mx-auto bg-red-600 text-white'>
-      <p className="p-6 ml-0 sm:p-5 md:ml-1">This is a <strong>Notice.</strong> These units can be optimised/edited so as to highlight subscriptions/CTAs. Just sayin.</p>
+      <p className="p-6 ml-0 sm:p-5 md:ml-1">
+        <ul className="tagNav flex">
+          <li className='mr-2'><Link href={"/categories/formula-one"}>Grand Prix</Link></li>
+          <li className='mr-2'><Link href={"/categories/football"}>Ajax</Link></li>
+          <li className='mr-2'><Link href={"/categories/formula-one"}>Verstappen</Link></li>
+          <li className='mr-2'><Link href={"/categories/tennis"}>Wimbledon</Link></li>
+        </ul>
+      </p>
     </div>
     </>
   );
