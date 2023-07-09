@@ -21,8 +21,8 @@ export default async function Page({ params }) {
     const category = params.category
     const techPosts = await getCats(category); 
     const postsinCat = techPosts.data[0].entries;
-    const popularPosts = await getPopularPosts();
-    const authors = await getAuthors(); 
+    // const popularPosts = await getPopularPosts();
+    // const authors = await getAuthors(); 
     
     return (
         <Layout>
@@ -44,7 +44,7 @@ export default async function Page({ params }) {
 
             {postsinCat.length >= 8 && (
               <>
-                <BannerArticle post={postsinCat[6]} authors={authors} />
+                {/* <BannerArticle post={postsinCat[6]} authors={authors} /> */}
                 
                 <section className="relative max-w-xl px-5 py-12 mx-auto lg:max-w-4xl sm:py-16 lg:py-24 md:max-w-3xl lg:px-8">
                   

@@ -7,7 +7,7 @@ export default function CategorySingleCol({posts}) {
   return <>   
     {posts.map((post, index) => (
       
-      <article className="md:gap-8 md:grid md:grid-cols-4" key={post.slug}>
+      <article className="md:gap-8 md:grid md:grid-cols-4" key={index}>
         
         {/* Image */}
         <div className="md:col-span-1">
