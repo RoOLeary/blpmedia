@@ -3,9 +3,10 @@ import Image from 'next/image'
 
 
 export default function CategorySingleCol({posts}) {
-  
+  console.log(posts);
   return <>   
     {posts.map((post, index) => (
+      
       <article className="md:gap-8 md:grid md:grid-cols-4" key={post.slug}>
         
         {/* Image */}

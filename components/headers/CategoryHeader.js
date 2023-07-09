@@ -18,7 +18,7 @@ export default function CategoryHeader({category}) {
           <div className="flex flex-col items-center order-2 mt-8 md:mt-0 md:order-1 md:flex-row">
             
             {/* Image */}
-            <div className="flex-shrink-0">
+            {/* <div className="flex-shrink-0">
               <div className="relative w-[100px] h-[100px] bg-gray-100">
                 <Image 
                   className="object-cover object-center" 
@@ -29,9 +29,9 @@ export default function CategoryHeader({category}) {
                 />
                 <span className="absolute inset-0 shadow-inner" aria-hidden="true" />
               </div>
-            </div>
+            </div> */}
 
-            <div className="mt-6 text-center md:ml-5 md:mt-0 md:text-left">
+            <div className="mt-6 text-center md:mt-0 md:text-left">
               <p className="text-xs tracking-widest text-red-700 font-bold uppercase">
                 Recent in
               </p>
