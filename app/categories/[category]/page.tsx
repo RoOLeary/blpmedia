@@ -1,16 +1,14 @@
 import Layout from './../../../components/layout/Layout'
 import CategoryHeader from './../../../components/headers/CategoryHeader'
 import CategorySingleCol from './../../../components/shared/CategorySingleCol'
-import SidebarArticles from './../../../components/sidebar/SidebarArticles'
+import CategorySidebarArticles from './../../../components/shared/CategorySidebarArticles'
 import SidebarAd from './../../../components/sidebar/SidebarAd'
 import BannerArticle from './../../../components/shared/BannerArticle'
 import Pagination from './../../../components/shared/Pagination'
-import { getPopularPosts } from '../../../libs/getPosts';
+// import { getPopularPosts } from '../../../libs/getPosts';
 
 
-async function getAllPopularPosts() {
-  return getPopularPosts();
-}
+
 
 async function getCats(slug){
     const cats = await fetch(`https://craft-ezhk.frb.io/api/category/${slug}.json`);
@@ -25,8 +23,9 @@ export default async function Page({ params }) {
     const category = params.category
     const techPosts = await getCats(category); 
     const postsinCat = techPosts.data[0].entries;
-    const popularPosts = await getAllPopularPosts();
+    // const popularPosts = await getPopularPosts();
     // const authors = await getAuthors(); 
+    // console.log(popularPosts);
     
     return (
         <Layout>
@@ -42,7 +41,7 @@ export default async function Page({ params }) {
                     <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
                         <SidebarAd /> 
                         <br />
-                        <SidebarArticles posts={popularPosts} header="Most read" />
+                        <CategorySidebarArticles posts={postsinCat.slice(6,12)} header="Most read" />
                     </div>
                 </div>
             </section>
@@ -55,7 +54,7 @@ export default async function Page({ params }) {
                   
                   {/* Articles */}
                   <div className="pb-8 mb-6 border-b-2 border-gray-100 sm:pb-10 sm:mb-10">
-                    <CategorySingleCol posts={postsinCat.slice(7,13)} />
+                    <CategorySingleCol posts={postsinCat.slice(12,20)} />
                   </div>
 
                   <Pagination />

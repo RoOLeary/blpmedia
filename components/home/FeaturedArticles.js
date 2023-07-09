@@ -22,7 +22,7 @@ const RecentContainer = tw.div`
 `;
 
 export default function FeaturedArticles({authors, featuredPosts}) {
-  console.log(featuredPosts[0]);
+  // console.log(featuredPosts[0]);
   let cats = featuredPosts[0].articleCategories;
   // console.log(cats[1].slug);
   cats = cats.map((cat, i) => {
@@ -66,16 +66,16 @@ export default function FeaturedArticles({authors, featuredPosts}) {
               <h2 className="text-3xl font-black tracking-normal text-gray-900 transition duration-300 ease-in-out decoration-gray-800 decoration-3 group-hover:underline md:tracking-tight lg:leading-tight lg:text-4xl">
                 {featuredPosts[0].title}
               </h2>
-              {/* <div>
+              <div>
                 <p className="mt-4 text-base leading-loose text-gray-600">
                   {featuredPosts[0].articleExcerpt}
                 </p>
-              </div> */}
-              <div>
+              </div>
+              {/* <div>
                 <p class="mt-4 text-base leading-loose text-gray-600">
                   Apple Inc is introducing a new feature that will allow businesses to accept credit card and digital payments with just a tap on their iPhones, bypassing hardware systems such as Block Inc's Square terminals.
                 </p>
-              </div>
+              </div> */}
 
             </Link>
             
