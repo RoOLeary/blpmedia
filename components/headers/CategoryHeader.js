@@ -15,7 +15,7 @@ export default function CategoryHeader({category}) {
         <div className="flex flex-col items-start w-full md:flex-row md:justify-between">
          
           {/* Category */}
-          <div className="flex flex-col items-start order-2 mt-8 md:mt-0 md:order-1 md:flex-row">
+          <div className="flex flex-col items-start order-2 mt-4 md:mt-0 md:order-1 md:flex-row">
             
             {/* Image */}
             {/* <div className="flex-shrink-0">
@@ -33,7 +33,7 @@ export default function CategoryHeader({category}) {
 
             <div className="text-left md:text-left">
               <p className="text-xs tracking-widest text-red-700 font-bold uppercase">
-                Recent in
+                Category:
               </p>
               <h1 className="mt-1.5 text-5xl font-black tracking-normal text-gray-900 sm:text-4xl md:tracking-tight lg:leading-tight lg:text-5xl uppercase">
                 {category}

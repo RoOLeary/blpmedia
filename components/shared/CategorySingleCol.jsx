@@ -2,8 +2,19 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 
+const slugify = (str) => {
+  
+  str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
+  str = str.toLowerCase(); // convert string to lowercase
+  str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
+           .replace(/\s+/g, '-') // replace spaces with hyphens
+           .replace(/-+/g, '-'); // remove consecutive hyphens
+  // console.log(str);
+  return str;
+}
+
 export default function CategorySingleCol({posts}) {
-  console.log(posts);
+  
   return <>   
     {posts.map((post, index) => (
       
@@ -11,6 +22,7 @@ export default function CategorySingleCol({posts}) {
         
         {/* Image */}
         <div className="md:col-span-1">
+             
           <Link
             href={`/posts/${post.slug}`}
             className="relative z-10 block overflow-hidden md:aspect-w-1 md:aspect-h-1 aspect-w-16 aspect-h-9 group bg-gray-50">
@@ -28,9 +40,15 @@ export default function CategorySingleCol({posts}) {
 
         {/* Content */}
         <div className="relative flex flex-col flex-wrap mt-6 md:mt-0 md:col-span-3">
-          <div className={`box-border flex flex-col justify-between flex-1 w-full px-6 md:px-0 ${index != posts.length -1 ? 'pb-8 mb-8 border-b-2 border-gray-100' : ''}`}>
+          <div className={`box-border flex flex-col justify-between flex-1 w-full px-2 md:px-0 ${index != posts.length -1 ? 'pb-8 mb-8 border-b-2 border-gray-100' : ''}`}>
             <div>
-              
+              <Link
+                href={`/categories/${post.articleCategories[1] ? post.articleCategories[1]['slug'] : '#'}`}
+                className="relative z-10 font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out text-tiny transition-color hover:text-red-600">
+
+                  {post.articleCategories[1] ? post.articleCategories[1]['title'] : null}
+
+              </Link>
               <h3 className="mt-2.5 text-xl font-medium leading-tight text-gray-900 transition duration-300 ease-in-out lg:text-xl sm:text-2xl xl:text-2xl decoration-gray-800 decoration-2 hover:underline">
                 <Link href={`/posts/${post.slug}`}>
 

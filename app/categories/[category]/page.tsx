@@ -25,7 +25,7 @@ export default async function Page({ params }) {
     const postsinCat = techPosts.data[0].entries;
     // const popularPosts = await getPopularPosts();
     // const authors = await getAuthors(); 
-    // console.log(popularPosts);
+    console.log(postsinCat);
     
     return (
         <Layout>
