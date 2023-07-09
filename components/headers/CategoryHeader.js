@@ -12,10 +12,10 @@ export default function CategoryHeader({category}) {
       
       {/* Conatiner */}
       <div className="max-w-xl px-4 mx-auto lg:max-w-screen-xl lg:px-8 md:max-w-3xl sm:px-12">
-        <div className="flex flex-col items-center w-full md:flex-row md:justify-between">
+        <div className="flex flex-col items-start w-full md:flex-row md:justify-between">
          
           {/* Category */}
-          <div className="flex flex-col items-center order-2 mt-8 md:mt-0 md:order-1 md:flex-row">
+          <div className="flex flex-col items-start order-2 mt-8 md:mt-0 md:order-1 md:flex-row">
             
             {/* Image */}
             {/* <div className="flex-shrink-0">
@@ -31,7 +31,7 @@ export default function CategoryHeader({category}) {
               </div>
             </div> */}
 
-            <div className="mt-6 text-center md:mt-0 md:text-left">
+            <div className="text-left md:text-left">
               <p className="text-xs tracking-widest text-red-700 font-bold uppercase">
                 Recent in
               </p>
