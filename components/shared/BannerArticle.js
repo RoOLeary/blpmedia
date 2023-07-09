@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { formatDate } from '../../utils/formatDate'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
-export default function BannerArticle({post, authors}) {
+export default function BannerArticle({post }) {
   return (
     <section className="relative w-full mb-52 lg:mb-40">
       

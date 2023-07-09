@@ -5,8 +5,7 @@ import CategorySingleCol from './../../../components/shared/CategorySingleCol'
 import SidebarArticles from './../../../components/sidebar/SidebarArticles'
 import SidebarAd from './../../../components/sidebar/SidebarAd'
 import BannerArticle from './../../../components/shared/BannerArticle'
-import { getPopularPosts } from './../../../libs/getPosts'
-import { getAuthors } from './../../../libs/getAuthors'
+import Pagination from './../../../components/shared/Pagination'
 
 async function getCats(slug){
     const cats = await fetch(`https://craft-ezhk.frb.io/api/category/${slug}.json`);
@@ -44,16 +43,16 @@ export default async function Page({ params }) {
 
             {postsinCat.length >= 8 && (
               <>
-                {/* <BannerArticle post={postsinCat[6]} authors={authors} /> */}
+                <BannerArticle post={postsinCat[6]} />
                 
                 <section className="relative max-w-xl px-5 py-12 mx-auto lg:max-w-4xl sm:py-16 lg:py-24 md:max-w-3xl lg:px-8">
                   
                   {/* Articles */}
                   <div className="pb-8 mb-6 border-b-2 border-gray-100 sm:pb-10 sm:mb-10">
-                    {/* <CategorySingleCol posts={postsinCat.slice(7,13)} /> */}
+                    <CategorySingleCol posts={postsinCat.slice(7,13)} />
                   </div>
-{/* 
-                  <Pagination /> */}
+
+                  <Pagination />
                   
                 </section>
               </>
