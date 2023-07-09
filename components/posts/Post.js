@@ -53,7 +53,8 @@ const Post = ({ post, postContent }) => {
             className="object-cover object-center" 
             src={post.articleImageUrl} 
             alt={post.articleImageAlt}
-            layout="fill"
+            width={500}
+            height={350}
           />
         </div>
 
