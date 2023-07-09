@@ -37,7 +37,7 @@ export default function CategoryPage({
 
           {/* Sidebar */}
           <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
-            <SidebarArticles posts={popularPosts} header={`Most read in ${category.name}`} />
+            {/* <SidebarArticles posts={popularPosts} header={`Most read in ${category.name}`} /> */}
             <SidebarSocialLinks />
             <SidebarAd />
           </div>
