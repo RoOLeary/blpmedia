@@ -121,7 +121,7 @@ export default function FeaturedArticles({authors, featuredPosts}) {
                     // href={`/categories/${featuredPosts[0].frontmatter.category.replace(/ /g, '-').toLowerCase()}`}
                     className="relative text-sm font-medium tracking-widest text-red-700 uppercase duration-300 ease-in-out transition-color hover:text-red-600">
 
-                    {post.articleCategories[1].title}
+                    {post.articleCategories[1] ? post.articleCategories[1].title : 'News'}
 
                   </Link>
 
