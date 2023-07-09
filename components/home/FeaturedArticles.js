@@ -6,7 +6,7 @@ import { formatDate } from '../../utils/formatDate'
 import tw from 'tailwind-styled-components';
 
 const Section = tw.section`
-  pt-12 sm:pt-16 lg:pt-20 bg-gray-50
+  pt-12 sm:pt-16 lg:pt-12 bg-gray-50
 `;
 
 const Container = tw.div`
