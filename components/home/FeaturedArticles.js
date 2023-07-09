@@ -14,7 +14,7 @@ const Container = tw.div`
 `;
 
 const FirstArticle = tw.article`
-  relative lg:top-8 lg:w-1/2 lg:stick
+  relative lg:top-8 lg:w-1/2 lg:sticky
 `;
 
 const RecentContainer = tw.div`
