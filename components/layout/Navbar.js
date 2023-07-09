@@ -1,23 +1,18 @@
-'use client';
+"use client";
 
 import Link from 'next/link'
 import Image from 'next/image'
 import menuLinks from '../../config/menus.js'
-import siteConfig from '../../config/site.config.js'
 import { usePathname } from 'next/navigation'
-import { Fragment } from 'react'
 import { Disclosure, Menu } from '@headlessui/react'
-import { ChevronDownIcon, SearchIcon } from '@heroicons/react/solid'
-
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, signIn, signOut } from "next-auth/react";
 
 
-
-// If loading a variable font, you don't need t
-
-export default function Navbar() {
+export default async function Navbar() {
   const router = usePathname();
-  // const { data: session } = useSession()
+  const { data: session } = useSession()
+
+  console.log(session ? session.user.name : 'no session')
 
   return (
     <>
@@ -104,8 +99,11 @@ export default function Navbar() {
               <div className="flex">
                 <div className="relative rounded-3xl">
                   <div className='flex gap-4'>
-                      
-                  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Login</button>
+                  {session ?
+                  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signOut()}>Log Out</button>
+                  :
+                  <button className="bg-red-600 text-white rounded-sm px-4 py-2 hover:bg-red-400" onClick={() => signIn()}>Log In</button>
+                  }
                 </div>
               </div>
               </div>
@@ -172,14 +170,16 @@ export default function Navbar() {
       )}
     </Disclosure>
     <div className='flex items-center h-20 sm:px-0 md:px-2 mx-auto bg-red-600 text-white'>
-      <p className="p-6 ml-0 sm:p-5 md:ml-1">
+      <div className="p-6 ml-0 sm:p-5 md:ml-1">
+        {session ? session.user.name : 
         <ul className="tagNav flex">
           <li className='mr-2'><Link href={"/categories/formula-one"}>Formula One</Link></li>
           <li className='mr-2'><Link href={"/categories/football"}>Football</Link></li>
           <li className='mr-2'><Link href={"/categories/tennis"}>Tennis</Link></li>
           <li className='mr-2'><Link href={"/categories/golf"}>Golf</Link></li>
-        </ul>
-      </p>
+        </ul> 
+        }
+      </div>
     </div>
     </>
   );
