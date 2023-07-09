@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Layout from './../../../components/layout/Layout'
 import CategoryHeader from './../../../components/headers/CategoryHeader'
 import CategorySingleCol from './../../../components/shared/CategorySingleCol'
@@ -6,6 +5,7 @@ import SidebarArticles from './../../../components/sidebar/SidebarArticles'
 import SidebarAd from './../../../components/sidebar/SidebarAd'
 import BannerArticle from './../../../components/shared/BannerArticle'
 import Pagination from './../../../components/shared/Pagination'
+import { getPopularPosts } from '../../../libs/getPosts';
 
 async function getCats(slug){
     const cats = await fetch(`https://craft-ezhk.frb.io/api/category/${slug}.json`);
@@ -20,7 +20,7 @@ export default async function Page({ params }) {
     const category = params.category
     const techPosts = await getCats(category); 
     const postsinCat = techPosts.data[0].entries;
-    // const popularPosts = await getPopularPosts();
+    const popularPosts = await getPopularPosts();
     // const authors = await getAuthors(); 
     
     return (
@@ -36,7 +36,8 @@ export default async function Page({ params }) {
                     {/* Sidebar */}
                     <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
                         <SidebarAd /> 
-                        {/* <SidebarArticles posts={popularPosts} header="Most read" /> */}
+                        <br />
+                        <SidebarArticles posts={popularPosts} header="Most read" />
                     </div>
                 </div>
             </section>
