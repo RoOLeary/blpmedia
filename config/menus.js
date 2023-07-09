@@ -2,7 +2,7 @@ export default {
   "mainMenu": [
     {
       "name": "About",
-      "link": "/about"
+      "link": "/categories/football"
     },
     {
       "name": "Advertise",
