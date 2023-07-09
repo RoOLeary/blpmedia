@@ -56,7 +56,6 @@ export default async function Page({ params }) {
                   <div className="pb-8 mb-6 border-b-2 border-gray-100 sm:pb-10 sm:mb-10">
                     <CategorySingleCol posts={postsinCat.slice(12,20)} />
                   </div>
-
                   <Pagination />
                 </section>
               </>
