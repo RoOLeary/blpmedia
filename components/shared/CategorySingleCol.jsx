@@ -58,7 +58,7 @@ export default function CategorySingleCol({posts}) {
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-[18px] h-[18px] ml-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                       </svg>
-                      <span className="ml-1 text-gray-500">Nov 2, 2020</span>
+                      <span className="ml-1 text-gray-500">July 9, 2023</span>
   
                       <span className="items-center hidden sm:flex">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-[18px] h-[18px] ml-2.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
