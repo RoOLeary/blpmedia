@@ -9,6 +9,7 @@ import SidebarInstagramFeed from '../components/sidebar/SidebarInstagramFeed'
 import SidebarAd from '../components/sidebar/SidebarAd'
 import Topics from '../components/home/Topics'
 import BannerArticle from '../components/shared/BannerArticle'
+import Pagination from '../components/shared/Pagination'
 
 import Newsletter from '../components/shared/Newsletter'
 import { getArchivedPosts, getFeaturedPosts, getPopularPosts } from '../libs/getPosts'
@@ -110,11 +111,17 @@ export default async function Page() {
             <section className="relative max-w-xl px-4 py-12 mx-auto lg:max-w-screen-xl sm:py-16 lg:py-24 sm:px-12 md:max-w-3xl lg:px-8">
                 <div className="w-full grid lg:gap-8 xl:gap-12 lg:grid-cols-3">
                     <div className="col-span-2">
-                        <SingleColFeed posts={articles.data.slice(16,25)} />
+                        <SingleColFeed posts={articles.data.slice(16,22)} />
+                        <br />
+                        <br />
+                        <Pagination />
                     </div>
+
+                    
                     {/* Sidebar */}
                     <div className="w-full mt-12 space-y-8 sm:mt-16 lg:mt-0 lg:col-span-1">
                         <SidebarAd /> 
+                        <br />
                         <SidebarArticles posts={popularPosts} header="Most read" />
                     </div>
                 </div>
