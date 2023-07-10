@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
-  title: "BLiP|Sports",
+  title: "BLIP | SPORTS",
   description: "All the latest sports news",
 };
 
