@@ -177,10 +177,10 @@ export default function Navbar() {
       <div className="p-6 ml-0 sm:p-5 md:ml-1">
         
         <ul className="tagNav flex">
-          <li className='mr-2'><Link href={"/categories/formula-one"}>Formula One</Link></li>
-          <li className='mr-2'><Link href={"/categories/football"}>Football</Link></li>
-          <li className='mr-2'><Link href={"/categories/tennis"}>Tennis</Link></li>
-          <li className='mr-2'><Link href={"/categories/golf"}>Golf</Link></li>
+          <li className='mr-2 font-black'><Link href={"/categories/formula-one"}>Features</Link></li>
+          <li className='mr-2 font-black'><Link href={"/categories/football"}>Latest</Link></li>
+          <li className='mr-2 font-black'><Link href={"/categories/tennis"}>Comment</Link></li>
+          <li className='mr-2 font-black'><Link href={"/categories/golf"}>More</Link></li>
         </ul> 
         
       </div>
