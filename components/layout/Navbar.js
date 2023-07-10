@@ -92,8 +92,7 @@ export default function Navbar() {
                     )
                   )}
 
-                </div>
-              
+              </div>
               {/* Search */}
               <div className="flex">
                 <div className="relative rounded-3xl">
