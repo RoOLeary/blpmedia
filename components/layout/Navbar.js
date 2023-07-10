@@ -53,11 +53,11 @@ export default function Navbar() {
                         {({ open }) => (
                           <>
                             {/* <Menu.Button
-                              classNafeme={`flex items-center px-3 py-1 font-medium text-md group ${open ? 'text-red-700' : 'text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                              classNafeme={`flex items-center px-3 py-1 font-medium text-md group ${open ? 'text-red-600' : 'text-gray-800 hover:text-red-600 transition duration-300 ease-in-out'}`}
                             >
                               <span>Pages</span>
                               <ChevronDownIcon
-                                className={`w-5 h-5 ml-2 transform duration-300 ${open ? 'rotate-180 text-red-700' : 'text-red-600 group-hover:text-red-700'}`}
+                                className={`w-5 h-5 ml-2 transform duration-300 ${open ? 'rotate-180 text-red-600' : 'text-red-600 group-hover:text-red-600'}`}
                                 aria-hidden="true"
                               />
                             </Menu.Button> */}
@@ -68,7 +68,7 @@ export default function Navbar() {
                                 <Menu.Item key={i}>
                                   <Link
                                     href={subLink.link}
-                                    className={`block rounded-lg py-3.5 px-5 font-bold ${pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-gray-800 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}>
+                                    className={`block rounded-lg py-3.5 px-5 font-bold ${pathname == subLink.link ? 'bg-gray-50 text-red-600' : 'text-gray-800 hover:bg-gray-50 hover:text-red-600 transition duration-300 ease-in-out'}`}>
 
                                     {subLink.name}
 
@@ -85,7 +85,7 @@ export default function Navbar() {
                       (<Link
                         key={index}
                         href={link.link}
-                        className={`px-3 py-1 font-bold text-md ${pathname == link.link ? 'active text-red-700' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
+                        className={`px-3 py-1 font-bold text-md ${pathname == link.link ? 'active text-red-600' : 'text-white transition duration-300 ease-in-out hover:text-red-600'}`}>
 
                         {link.name}
 
@@ -109,7 +109,7 @@ export default function Navbar() {
               </div>
               {/* Hamburger menu button */}
               <Disclosure.Button className="flex items-center justify-center p-3 ml-6 transition duration-300 ease-in-out cursor-pointer rounded-xl bg-black md:hidden group focus:outline-none">
-                <span className={`relative w-4 h-3.5 transition duration-500 ease-in-out transform rotate-0 ${open ? 'js-hamburger-open' : ''}`}>
+                <span className={`relative w-4 h-3.5 transition duration-600 ease-in-out transform rotate-0 ${open ? 'js-hamburger-open' : ''}`}>
                   <span className="absolute top-0 left-0 block w-full h-0.5 transition duration-300 ease-in-out transform rotate-0 bg-white rounded-full opacity-100 group-hover:bg-red-600" />
                   <span className="absolute left-0 block w-full h-0.5 transition duration-300 ease-in-out transform rotate-0 bg-white rounded-full opacity-100 top-1.5 group-hover:bg-red-600" />
                   <span className="absolute left-0 block w-full h-0.5 transition duration-300 ease-in-out transform rotate-0 bg-white rounded-full opacity-100 top-1.5 group-hover:bg-red-600" />
@@ -131,7 +131,7 @@ export default function Navbar() {
                     (<Link
                       href={link.link}
                       key={i}
-                      className={`block px-4 py-3 font-bold rounded-lg ${pathname == link.link ? 'text-white text-red-700' : 'text-gray-800 hover:text-gray-800 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                      className={`block px-4 py-3 font-bold rounded-lg ${pathname == link.link ? 'text-white text-red-600' : 'text-gray-800 hover:text-gray-800 hover:text-red-600 transition duration-300 ease-in-out'}`}
                       aria-current="page">
 
                       {link.name}
@@ -142,7 +142,7 @@ export default function Navbar() {
               </div>
 
               {/* <div className="pt-4 pb-3 border-t border-gray-300/70">
-                <div className="px-6 mt-2 text-xs font-medium tracking-widest text-gray-500 uppercase">Pages</div>
+                <div className="px-6 mt-2 text-xs font-medium tracking-widest text-gray-600 uppercase">Pages</div>
                 <div className="px-2 mt-3 space-y-1">
 
                   {menuLinks.mainMenu.map((link, i) =>
@@ -151,7 +151,7 @@ export default function Navbar() {
                         {link.submenu.map((subLink, j) => (
                           <Link href={subLink.link} key={j}>
                             <a 
-                              className={`block px-4 py-2 font-medium rounded-lg ${pathname == subLink.link ? 'bg-gray-50 text-red-700' : 'text-red-600 hover:bg-gray-50 hover:text-red-700 transition duration-300 ease-in-out'}`}
+                              className={`block px-4 py-2 font-medium rounded-lg ${pathname == subLink.link ? 'bg-gray-50 text-red-600' : 'text-red-600 hover:bg-gray-50 hover:text-red-600 transition duration-300 ease-in-out'}`}
                               aria-current="page"
                             >
                               {subLink.name}
