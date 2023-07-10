@@ -59,7 +59,6 @@ export default async function Page({ params }) {
                     <br />
                     <Pagination />
                   </div>
-                  
                 </section>
               </>
             )}
