@@ -11,7 +11,7 @@ import Pagination from './../../../components/shared/Pagination'
 
 
 async function getCats(slug){
-    const cats = await fetch(`https://craft-ezhk.frb.io/api/category/${slug}.json`);
+    const cats = await fetch(`https://craft-ezhk.frb.io/api/category/${slug}.json`, { next: { revalidate: 30 } });
     if (!cats.ok) {
       throw new Error('Failed to fetch data');
     }
