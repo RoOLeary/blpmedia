@@ -31,53 +31,53 @@ const slugify = (str) => {
   return str;
 }
 
-const RemotePost = ({ post }) => {
+function RemotePost({ post }) {
   // console.log(post);
   const { headline, uri, description_text } = post;
   // console.log(slugify(headline)); 
-  return(
+  return (
     // <div className={'p-4'}>
     //   <Link href={`${uri}`}><h2 className={"font-bold my-2"}>{headline}</h2></Link>
     //   <p>{description_text}</p>  
     // </div>
     <article key={uri} className="flex space-x-4 sm:space-x-6 lg:space-x-4 mt-4 mb-4">
-            
-    {/* Image */}
-    <Link
-      href={`/posts/${slugify(headline)}`}
-      className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
-        
 
-    </Link>
-    
-    {/* Content */}
-    <div className="w-2/3">
-      <div className="flex flex-col justify-center flex-1 w-full h-full">
-        <div>
-          <Link
-            href={`/posts/${slugify(headline)}`}
-            className="font-black leading-snug tracking-normal text-gray-900 transition duration-300 ease-in-out text-md hover:underline decoration-2 decoration-gray-800">
+      {/* Image */}
+      <Link
+        href={`/posts/${slugify(headline)}`}
+        className="relative z-10 w-24 h-24 overflow-hidden bg-gray-100 group sm:w-28 sm:h-28 lg:w-20 lg:h-20 xl:w-24 xl:h-24">
 
-            {headline}
 
-          </Link>
+      </Link>
+
+      {/* Content */}
+      <div className="w-2/3">
+        <div className="flex flex-col justify-center flex-1 w-full h-full">
+          <div>
+            <Link
+              href={`/posts/${slugify(headline)}`}
+              className="font-black leading-snug tracking-normal text-gray-900 transition duration-300 ease-in-out text-md hover:underline decoration-2 decoration-gray-800">
+
+              {headline}
+
+            </Link>
+          </div>
+
+          {/* Author */}
+          <div className="flex items-center justify-between mt-2">
+            {description_text}
+
+
+
+          </div>
+
         </div>
-
-        {/* Author */}
-        <div className="flex items-center justify-between mt-2">
-        {description_text}
-
-        
-          
-        </div>
-        
       </div>
-    </div>
-    
-  </article>
-    
 
-  )
+    </article>
+
+
+  );
 }
 
 async function getBlogPost(slug){
