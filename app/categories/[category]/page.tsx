@@ -23,10 +23,7 @@ export default async function Page({ params }) {
     const category = params.category
     const techPosts = await getCats(category); 
     const postsinCat = techPosts.data[0].entries;
-    // const popularPosts = await getPopularPosts();
-    // const authors = await getAuthors(); 
-    // console.log(postsinCat);
-    
+   
     return (
         <Layout>
             <CategoryHeader category={params.category} />
