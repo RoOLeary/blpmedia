@@ -45,7 +45,6 @@ export default async function Page({ params }) {
                     </div>
                 </div>
             </section>
-
             {postsinCat.length >= 8 && (
               <>
                 <BannerArticle post={postsinCat[6]} />
